@@ -16,3 +16,7 @@
   - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to your to point to your Labs Team Front End Repository.
 - run: `npm install` to download all dependencies.
 - run: `npm start` to start your local development server.
+
+## Components
+
+- [See an example of a `FormContainer` here](./src/components/FormComponent/README.md)
