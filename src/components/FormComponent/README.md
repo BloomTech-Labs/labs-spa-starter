@@ -4,4 +4,6 @@
 
 ### PropTypes
 
-- For more information on PropTypes you can checkout [React's documentation here](https://reactjs.org/docs/typechecking-with-proptypes.html)
+- For more information on PropTypes you can checkout [the React documentation on Prop Types here](https://reactjs.org/docs/typechecking-with-proptypes.html)
+
+### Component Structure Diagram

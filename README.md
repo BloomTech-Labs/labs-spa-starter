@@ -2,9 +2,9 @@
 
 > **Disclaimer:** This application is currently in Alpha (as of June 08, 2020) and is not ready for production. Please use at your own risk as things will change almost daily.
 
-- Welcome to your Basic Single Page Application Repository. Use this to start your own Greenfield Project using ReactJS and common industry standards.
+- Welcome to your `Basic Single Page Application Repository`. Use this to start your own Greenfield Project using ReactJS and common industry standards.
 
-- The following was built using Create React App for base boilerplating. We will maintain the dependencies as according to their specifications as an Engineering Organization.
+- The following was built using [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) for base boiler-plating. We will maintain the dependencies as according to their specifications as an Engineering Organization.
 
 ## Requirements
 
