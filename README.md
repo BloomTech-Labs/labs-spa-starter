@@ -4,6 +4,8 @@
 
 - Welcome to your `Basic Single Page Application Repository`. Use this to start your own Greenfield Project using ReactJS and common industry standards.
 
+- This repository assumes a handful of industry practices and standards. We strive to keep you on the bleeding edge of the industry and as a result, we have made some opinions for you so that you don't have to; you're welcome.
+
 - The following was built using [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) for base boiler-plating. We will maintain the dependencies as according to their specifications as an Engineering Organization.
 
 ## Requirements
@@ -19,4 +21,8 @@
 
 ## Components
 
-- [See an example of a `FormContainer` here](./src/components/FormComponent/README.md)
+- [See an example of a `FormComponent` here](./src/components/FormComponent/README.md)
+
+## Styling Your App
+
+- << More info to come on styling :) >>
