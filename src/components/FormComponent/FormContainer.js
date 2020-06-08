@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Button from "./Button";
+import FormButton from "./FormButton";
 import FormInput from "./FormInput";
 
 const FormContainer = () => {
@@ -44,7 +44,7 @@ const FormContainer = () => {
         value={userPassword}
         handleInput={inputHandler}
       />
-      <Button
+      <FormButton
         handleButtonClick={clickHandler}
         classType="primary"
         buttonText="Click"

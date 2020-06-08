@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = (props) => {
+const FormButton = (props) => {
   return (
     <button
       onClick={props.handleButtonClick}
@@ -12,9 +12,9 @@ const Button = (props) => {
   );
 };
 
-export default Button;
+export default FormButton;
 
-Button.propTypes = {
+FormButton.propTypes = {
   buttonText: PropTypes.string.isRequired,
   type: PropTypes.string,
   handleButtonClick: PropTypes.func,
