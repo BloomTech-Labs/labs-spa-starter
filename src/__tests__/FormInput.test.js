@@ -39,7 +39,6 @@ describe("<FormInput /> test suite", () => {
     const input = getByTestId(/reusable-input/i);
 
     user.type(input, "hello@world.com");
-    console.log(input.value);
     expect(inputMock).toHaveBeenCalledTimes(15);
     expect(input.value).toBe("hello@world.com");
   });
