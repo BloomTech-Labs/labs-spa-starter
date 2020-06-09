@@ -10,15 +10,18 @@ describe("<FormInput /> test suite", () => {
     jest.clearAllMocks();
   });
   test("input is rendered with proper labels", () => {
-    const inputMock = jest.fn();
-
-    const { getByLabel } = render(
+    // For this assertion, we're just using RTL to test the attributes that get rendered from FormInput
+    const { getByLabelText } = render(
       <FormInput
         labelId="User Email"
         placeholder="User Email"
-        handleInput={inputMock}
+        handleInput={() => {}}
       />
     );
+
+    const input = getByLabelText(/user email/i);
+    expect(input.type).toBe("text");
+    expect(input.placeholder).toBe("User Email");
   });
 
   test("input handler handles the change", () => {

@@ -7,6 +7,7 @@ const FormInput = (props) => {
       <label htmlFor={props.labelId}>{props.labelId}</label>
       <input
         type="text"
+        id={props.labelId}
         data-testid="reusable-input"
         name={props.labelId}
         value={props.value}
