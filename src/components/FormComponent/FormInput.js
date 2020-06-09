@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 const FormInput = (props) => {
   return (
     <>
-      <label htmlFor={props.labelId}>{props.labelId}:</label>
+      <label htmlFor={props.labelId}>{props.labelId}</label>
       <input
+        type="text"
         name={props.labelId}
         value={props.value}
         onChange={(input) => props.handleInput(input)}
