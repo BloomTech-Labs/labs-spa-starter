@@ -8,7 +8,6 @@ const FormInput = (props) => {
       <input
         type="text"
         id={props.labelId}
-        data-testid="reusable-input"
         name={props.labelId}
         value={props.value}
         onChange={(input) => props.handleInput(input)}

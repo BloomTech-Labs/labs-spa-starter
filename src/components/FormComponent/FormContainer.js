@@ -10,28 +10,28 @@ const FormContainer = () => {
   const clickHandler = (event) => {
     event.preventDefault();
     // take userPassword and userEmail and send it off to state
-    alert(`
+    return `
       User's Email is ${userEmail}  
       User's Password is ${userPassword}
-    `);
-    // clean up state
+    `;
     setUserEmail("");
     setUserPassword("");
+    // clean up state
   };
 
   const inputHandler = (input) => {
     const userInput = input.target;
     // You can use a custom handler here and adapt it to whatever types of inputs you need.
     // Be sure to look at the propTypes supported and required inside of FormInput.js
-    if (input.target.name === "Email") {
+    if (input.target.name === /email/i) {
       return setUserEmail(userInput.value);
     }
-    if (input.target.name === "Password") {
+    if (input.target.name === /password/i) {
       return setUserPassword(userInput.value);
     }
   };
   return (
-    <form>
+    <form data-testid="reusable-form">
       <FormInput
         placeholder="User Name"
         labelId="Email"
