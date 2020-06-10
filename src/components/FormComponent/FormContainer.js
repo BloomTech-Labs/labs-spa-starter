@@ -2,51 +2,28 @@ import React, { useState } from "react";
 
 import FormButton from "./FormButton";
 import FormInput from "./FormInput";
+import { submitLogin } from "../../api";
 
 const FormContainer = () => {
-  const [userPassword, setUserPassword] = useState("");
-  const [userEmail, setUserEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const clickHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    // take userPassword and userEmail and send it off to state
-    return `
-      User's Email is ${userEmail}  
-      User's Password is ${userPassword}
-    `;
-    setUserEmail("");
-    setUserPassword("");
-    // clean up state
+    const { username, password } = event.target.value;
+    const newUser = { username, password };
+    setIsLoading(true);
+    const results = await submitLogin(newUser);
+    return results;
   };
 
-  const inputHandler = (input) => {
-    const userInput = input.target;
-    // You can use a custom handler here and adapt it to whatever types of inputs you need.
-    // Be sure to look at the propTypes supported and required inside of FormInput.js
-    if (input.target.name === /email/i) {
-      return setUserEmail(userInput.value);
-    }
-    if (input.target.name === /password/i) {
-      return setUserPassword(userInput.value);
-    }
-  };
   return (
-    <form data-testid="reusable-form">
-      <FormInput
-        placeholder="User Name"
-        labelId="Email"
-        value={userEmail}
-        handleInput={inputHandler}
-      />
-      <FormInput
-        placeholder="Password"
-        labelId="Password"
-        value={userPassword}
-        handleInput={inputHandler}
-      />
+    <form onSubmit={submitHandler}>
+      <FormInput placeholder="User Name" name="username" labelId="Email" />
+      <FormInput placeholder="Password" name="password" labelId="Password" />
       <FormButton
-        handleButtonClick={clickHandler}
+        isDisabled={isLoading}
         classType="primary"
+        type="submit"
         buttonText="Click"
       />
     </form>

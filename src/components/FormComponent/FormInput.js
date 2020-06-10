@@ -9,8 +9,6 @@ const FormInput = (props) => {
         type="text"
         id={props.labelId}
         name={props.labelId}
-        value={props.value}
-        onChange={(input) => props.handleInput(input)}
         placeholder={props.placeholder}
       />
     </>
@@ -21,7 +19,6 @@ export default FormInput;
 
 FormInput.propTypes = {
   placeholder: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   labelId: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  handleInput: PropTypes.func,
 };

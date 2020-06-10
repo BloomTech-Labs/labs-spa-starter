@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 const FormButton = (props) => {
   return (
     <button
-      data-testid="reusable-button"
-      onClick={props.handleButtonClick}
+      disabled={props.isDisabled}
       className={props.classType || "primary"}
+      type={props.type}
     >
       {props.buttonText}
     </button>
