@@ -13,14 +13,20 @@ afterEach(() => {
 describe("<FormContainer /> test suite", () => {
   test("button responds to click handler", () => {
     mockSubmitLogin.mockResolvedValueOnce();
+    const fakeUser = {
+      username: "test@email.com",
+      password: "testing123",
+    };
     const { getByText, getByLabelText } = render(<FormContainer />);
     const button = getByText(/click/i);
-    const inputEmail = getByLabelText(/email/i);
-    const inputPassword = getByLabelText(/password/i);
-    user.type(inputEmail, "Hello");
-    user.type(inputPassword, "World");
+    getByLabelText(/email/i).value = fakeUser.username;
+    getByLabelText(/password/i).value = fakeUser.password;
     user.click(button);
+
     expect(button).toBeDisabled();
     expect(mockSubmitLogin).toHaveBeenCalledTimes(1);
+    expect(mockSubmitLogin).toHaveBeenCalledWith({
+      ...fakeUser,
+    });
   });
 });

@@ -9,9 +9,10 @@ const FormContainer = () => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    const { username, password } = event.target.value;
-    const newUser = { username, password };
     setIsLoading(true);
+    const { username, password } = event.target.elements;
+    const newUser = { username: username.value, password: password.value };
+    // this is a fake api call. API methods should be defined in the `../api/index.js` file
     const results = await submitLogin(newUser);
     return results;
   };

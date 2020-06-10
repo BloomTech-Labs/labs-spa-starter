@@ -8,7 +8,7 @@ const FormInput = (props) => {
       <input
         type="text"
         id={props.labelId}
-        name={props.labelId}
+        name={props.name}
         placeholder={props.placeholder}
       />
     </>

@@ -3,9 +3,10 @@ const sleep = (time) =>
     setTimeout(resolve, time);
   });
 
-async function submitLogin() {
+async function submitLogin(user) {
+  // this is a fake API call. Needs to be replaced with a real Authentication flow
   await sleep(1000);
-  return { success: true };
+  return { success: true, username: user.username };
 }
 
 export { submitLogin };
