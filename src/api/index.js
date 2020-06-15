@@ -9,4 +9,4 @@ async function submitLogin(user) {
   return { success: true, username: user.username };
 }
 
-export { submitLogin };
+export { submitLogin, sleep };

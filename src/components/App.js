@@ -1,5 +1,15 @@
 import React from "react";
 import FormComponent from "./FormComponent";
+import { Security, LoginCallback } from "@okta/okta-react";
+
+const clientId = process.env.REACT_APP_CLIENT_ID;
+
+const config = {
+  issuer: "https://localhost:3000/oauth2/default",
+  redirectUri: window.location.origin + "/implicit/callback",
+  clientId: `${clientId}`,
+  pkce: true,
+};
 
 function App() {
   return (
