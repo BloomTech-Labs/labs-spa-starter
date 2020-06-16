@@ -4,7 +4,7 @@ import { FormButton, FormInput } from "../ReusableComponents/";
 
 import { submitLogin } from "../../api";
 
-const FormContainer = () => {
+const LoginContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const submitHandler = async (event) => {
@@ -32,4 +32,4 @@ const FormContainer = () => {
   );
 };
 
-export default FormContainer;
+export default LoginContainer;

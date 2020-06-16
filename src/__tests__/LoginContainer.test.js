@@ -3,21 +3,21 @@ import { render, act } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import { submitLogin as mockSubmitLogin } from "../api";
 
-import FormContainer from "../components/FormComponent/FormContainer";
+import LoginContainer from "../components/LoginComponent";
 
 jest.mock("../api");
 afterEach(() => {
   jest.clearAllMocks();
 });
 
-describe("<FormContainer /> test suite", () => {
+describe("<LoginContainer /> test suite", () => {
   test("button responds to click handler", () => {
     mockSubmitLogin.mockResolvedValueOnce();
     const fakeUser = {
       username: "test@email.com",
       password: "testing123",
     };
-    const { getByText, getByLabelText } = render(<FormContainer />);
+    const { getByText, getByLabelText } = render(<LoginContainer />);
     const button = getByText(/click/i);
     getByLabelText(/email/i).value = fakeUser.username;
     getByLabelText(/password/i).value = fakeUser.password;
