@@ -1,9 +1,9 @@
 import React from "react";
-import Login from "../components/LoginComponent";
-import Home from "../components/HomeComponent";
+import Login from "./LoginComponent";
+import Home from "./HomeComponent";
 
+import { Route, Link } from "react-router-dom";
 import { Security, LoginCallback } from "@okta/okta-react";
-import { Route } from "react-router-dom";
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
 
@@ -14,9 +14,13 @@ const config = {
   pkce: true,
 };
 
-const routes = () => {
+const Routes = () => {
   return (
     <>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+      </nav>
       <Route path="/" exact>
         <Home />
       </Route>
@@ -27,4 +31,4 @@ const routes = () => {
     </>
   );
 };
-export default routes;
+export default Routes;
