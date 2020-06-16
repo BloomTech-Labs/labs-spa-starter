@@ -14,6 +14,7 @@ const FormContainer = () => {
     const newUser = { username: username.value, password: password.value };
     // this is a fake api call. API methods should be defined in the `../api/index.js` file
     const results = await submitLogin(newUser);
+    // console.log(results) if you wanna see what `submitLogin()` resolves.
     return results;
   };
 
