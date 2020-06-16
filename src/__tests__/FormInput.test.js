@@ -1,6 +1,5 @@
-import FormInput from "../components/FormComponent/FormInput";
+import { FormInput } from "../components/ReusableComponents";
 
-import user from "@testing-library/user-event";
 import React from "react";
 import { render } from "@testing-library/react";
 

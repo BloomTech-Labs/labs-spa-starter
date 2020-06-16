@@ -1,4 +1,4 @@
-import FormButton from "../components/FormComponent/FormButton";
+import { FormButton } from "../components/ReusableComponents";
 
 import user from "@testing-library/user-event";
 import React from "react";
