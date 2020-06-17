@@ -3,6 +3,8 @@ import { useOktaAuth } from "@okta/okta-react";
 
 function Home() {
   const { authState } = useOktaAuth();
+  // Authstate is the prop we want to use to check if users are authenticated.
+  // We can perform these checks on the front end, but ought to make sure we perform them on the backend.
   if (!authState.isAuthenticated) {
     // we actually want to redirect to login here to get the user to sign in.
     return <div>Not Authenticated</div>;

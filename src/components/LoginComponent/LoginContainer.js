@@ -5,7 +5,7 @@ import { FormButton, FormInput } from "../ReusableComponents";
 
 const LoginContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { authService } = useOktaAuth();
+  const { authService, authState } = useOktaAuth();
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -16,7 +16,9 @@ const LoginContainer = () => {
     // You'll be able to use the `authState`
     // this is a fake api call. API methods should be defined in the `../api/index.js` file
     authService.login("/");
-    // console.log(results) if you wanna see what `submitLogin()` resolves.
+    const { accessToken } = authState;
+    // now you can
+    // console.log(accessToken)
   };
 
   return (
