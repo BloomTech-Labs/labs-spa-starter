@@ -1,21 +1,22 @@
 import React, { useState } from "react";
+import { useOktaAuth } from "@okta/okta-react";
 
-import { FormButton, FormInput } from "../ReusableComponents/";
-
-import { submitLogin } from "../../api";
+import { FormButton, FormInput } from "../ReusableComponents";
 
 const LoginContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const { authService } = useOktaAuth();
 
   const submitHandler = async (event) => {
     event.preventDefault();
     setIsLoading(true);
     const { username, password } = event.target.elements;
     const newUser = { username: username.value, password: password.value };
+    // we will take this user and eventually send it up to Okta to store there :) No need to handle users.
+    // You'll be able to use the `authState`
     // this is a fake api call. API methods should be defined in the `../api/index.js` file
-    const results = await submitLogin(newUser);
+    authService.login("/");
     // console.log(results) if you wanna see what `submitLogin()` resolves.
-    return results;
   };
 
   return (

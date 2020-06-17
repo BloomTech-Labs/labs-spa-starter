@@ -1,12 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Routes from "./components/Routes";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+import { Security, LoginCallback } from "@okta/okta-react";
+
+import Login from "./components/LoginComponent";
+import Home from "./components/HomeComponent";
+import { config } from "./utils/oktaConfig";
 
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <Routes />
+      <Security {...config}>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/implicit/callback" component={LoginCallback} />
+      </Security>
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById("root")
