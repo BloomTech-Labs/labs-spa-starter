@@ -17,7 +17,7 @@ const LoginContainer = () => {
     // this is a fake api call. API methods should be defined in the `../api/index.js` file
     authService.login("/");
     const { accessToken } = authState;
-    // now you can
+    // now you can grab the token and do whatever you need with it.
     // console.log(accessToken)
   };
 

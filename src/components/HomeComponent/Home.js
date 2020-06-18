@@ -29,6 +29,7 @@ function Home() {
             the `index.js` file to pass that container around in your app.
           </p>
         </div>
+        {/* ListComponent */}
       </div>
     );
   }
