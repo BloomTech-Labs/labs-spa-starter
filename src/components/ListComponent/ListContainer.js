@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const ListItems = ({ LoadingComponent, ItemsComponent, getItemsData}) => {
   const [items, setItems] = useState([]);
@@ -21,3 +22,9 @@ const ListItems = ({ LoadingComponent, ItemsComponent, getItemsData}) => {
 };
 
 export default ListItems;
+
+ListItems.propTypes = {
+  LoadingComponent: PropTypes.func.isRequired,
+  ItemsComponent: PropTypes.func.isRequired,
+  getItemsData: PropTypes.func.isRequired
+}
