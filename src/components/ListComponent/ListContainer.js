@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import Items from "./ListItems";
+
 const ListItems = () => {
   const [items, setItems] = useState([]);
   const [isFetching, setFetching] = useState(false);
@@ -10,12 +12,12 @@ const ListItems = () => {
       setFetching(true);
     }
     fetchNotes();
-  }, []);
+  });
 
   if (isFetching) {
     return <div>...loading items</div>;
   } else {
-    return <div>Items</div>;
+    return <Items items={items} />;
   }
 };
 
