@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 
 const ListItems = () => {
-  const [notes, setNotes] = useState([]);
+  const [items, setItems] = useState([]);
   const [isFetching, setFetching] = useState(false);
 
   useEffect(() => {
     function fetchNotes() {
-      setNotes(notes);
+      setItems(items);
       setFetching(true);
     }
     fetchNotes();
-  });
+  }, []);
 
   if (isFetching) {
-    return <div>...loading notes</div>;
+    return <div>...loading items</div>;
   } else {
-    return <div>Notes</div>;
+    return <div>Items</div>;
   }
 };
 
