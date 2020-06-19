@@ -6,9 +6,9 @@ const sleep = (time) =>
     setTimeout(resolve, time);
   });
 
-const getItemsData = () => {
+const getExampleData = () => {
   return axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
     .then(response => response.data)
 }
 
-export { sleep, getItemsData };
+export { sleep, getExampleData };

@@ -3,9 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Security, LoginCallback } from "@okta/okta-react";
 
-import { getItemsData } from "./api";
-
-import ListItems, { Items } from "./components/ListComponent";
+import ExampleList from "./components/ExampleListComponent"
 import Login from "./components/LoginComponent";
 import Home from "./components/HomeComponent";
 import { config } from "./utils/oktaConfig";
@@ -22,11 +20,7 @@ ReactDOM.render(
         </Route>
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/items">
-          <ListItems
-            getItemsData={getItemsData}
-            LoadingComponent={() => <div>Loading Items...</div>}
-            ItemsComponent={Items}
-          />
+          <ExampleList />
         </Route>
       </Security>
     </React.StrictMode>
