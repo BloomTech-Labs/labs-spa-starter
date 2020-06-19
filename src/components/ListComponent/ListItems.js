@@ -1,11 +1,14 @@
 import React from "react";
 
-const Items = ({ items }) => (
-  <div>
+const Items = (props) => (
+  <div className="items-container">
     {
-      items.map(item => (
+      props.items.map(item => (
         <figure key={item.id}>
-          <img src={item.img_url} alt={item.img_description} />
+          <img src={item.thumbnailUrl} alt={item.title} />
+          <figcaption>
+            <h3>{item.title}</h3>
+          </figcaption>
         </figure>
       ))
     }

@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from "react";
 
+import { getItemsData } from "../../api";
+
 import Items from "./ListItems";
 
 const ListItems = () => {
   const [items, setItems] = useState([]);
-  const [isFetching, setFetching] = useState(false);
+  const [isFetching, setFetching] = useState(true);
 
   useEffect(() => {
-    function fetchNotes() {
-      setItems(items);
-      setFetching(true);
-    }
-    fetchNotes();
-  });
+    getItemsData()
+      .then(items => {   
+        setItems(items);
+      })
+      .catch(error => {
+        console.error(error);
+      })
+      .finally(() =>{
+        setFetching(false);
+      });
+  }, []);
 
-  if (isFetching) {
-    return <div>...loading items</div>;
-  } else {
-    return <Items items={items} />;
-  }
+  return isFetching ? <div>...Loading Items</div> : <Items items={items} />;
 };
 
 export default ListItems;
