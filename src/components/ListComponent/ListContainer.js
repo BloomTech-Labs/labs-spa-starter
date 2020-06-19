@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { getItemsData } from "../../api";
-
-import Items from "./ListItems";
-
-const ListItems = () => {
+const ListItems = ({ LoadingComponent, ItemsComponent, getItemsData}) => {
   const [items, setItems] = useState([]);
   const [isFetching, setFetching] = useState(true);
 
@@ -21,7 +17,7 @@ const ListItems = () => {
       });
   }, []);
 
-  return isFetching ? <div>...Loading Items</div> : <Items items={items} />;
+  return isFetching ? <LoadingComponent /> : <ItemsComponent data={items} />;
 };
 
 export default ListItems;

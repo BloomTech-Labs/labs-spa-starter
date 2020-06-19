@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Items = (props) => (
   <div className="items-container">
     {
-      props.items.map(item => (
+      props.data.map(item => (
         <figure key={item.id}>
           <img src={item.thumbnailUrl} alt={item.title} />
           <figcaption>
@@ -19,7 +19,7 @@ const Items = (props) => (
 export default Items;
 
 Items.propTypes = {
-  items: PropTypes.arrayOf(
+  data: PropTypes.arrayOf(
     PropTypes.shape({
       // Here we require an id of type number or string to prevent a "unique key prop" warning
       id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
