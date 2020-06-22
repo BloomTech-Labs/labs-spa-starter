@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const ListItems = ({ LoadingComponent, RenderItems, getItemsData }) => {
+const List = ({ LoadingComponent, RenderItems, getItemsData }) => {
   const [items, setItems] = useState([]);
   const [isFetching, setFetching] = useState(true);
 
@@ -16,14 +16,14 @@ const ListItems = ({ LoadingComponent, RenderItems, getItemsData }) => {
       .finally(() =>{
         setFetching(false);
       });
-  }, []);
+  }, [getItemsData]);
 
   return isFetching ? <LoadingComponent /> : <RenderItems data={items} />;
 };
 
-export default ListItems;
+export default List;
 
-ListItems.propTypes = {
+List.propTypes = {
   LoadingComponent: PropTypes.func.isRequired,
   RenderItems: PropTypes.func.isRequired,
   getItemsData: PropTypes.func.isRequired

@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ExampleItems = (props) => (
-  <div className="items-container">
+const RenderExampleList = (props) => (
+  <div>
     {
       props.data.map(item => (
         <figure key={item.id}>
@@ -16,9 +16,9 @@ const ExampleItems = (props) => (
   </div>
 )
 
-export default ExampleItems;
+export default RenderExampleList;
 
-ExampleItems.propTypes = {
+RenderExampleList.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       // Here we require an id of type number or string to prevent a "unique key prop" warning

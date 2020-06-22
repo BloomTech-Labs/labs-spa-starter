@@ -2,15 +2,15 @@ import React from 'react';
 
 import { getExampleData } from "../../api";
 
-import { ListItems } from '../ReusableComponents';
-import ExampleItems from './ExampleItems';
+import { List } from '../ReusableComponents';
+import RenderExampleList from './RenderExampleList';
 
 const ExampleList = () => {
   return (
-    <ListItems
+    <List
       getItemsData={getExampleData}
       LoadingComponent={() => <div>Loading Items...</div>}
-      RenderItems={ExampleItems}
+      RenderItems={RenderExampleList}
     />
   );
 }
