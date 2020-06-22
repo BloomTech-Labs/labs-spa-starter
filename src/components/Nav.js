@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const Routes = () => {
+const Nav = () => {
   return (
     <>
       <nav>
@@ -12,4 +12,4 @@ const Routes = () => {
     </>
   );
 };
-export default Routes;
+export default Nav;
