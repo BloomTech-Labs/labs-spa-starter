@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
-import { FormButton, FormInput } from "../ReusableComponents";
+import { FormButton, FormInput } from "../common";
 
 const LoginContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
