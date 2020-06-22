@@ -3,18 +3,16 @@ import PropTypes from "prop-types";
 
 const RenderExampleList = (props) => (
   <div>
-    {
-      props.data.map(item => (
-        <figure key={item.id}>
-          <img src={item.thumbnailUrl} alt={item.title} />
-          <figcaption>
-            <h3>{item.title}</h3>
-          </figcaption>
-        </figure>
-      ))
-    }
+    {props.data.map((item) => (
+      <figure key={item.id}>
+        <img src={item.thumbnailUrl} alt={item.title} />
+        <figcaption>
+          <h3>{item.title}</h3>
+        </figcaption>
+      </figure>
+    ))}
   </div>
-)
+);
 
 export default RenderExampleList;
 

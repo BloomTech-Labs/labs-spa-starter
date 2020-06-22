@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 import { getExampleData } from "../../api";
 
-import { List } from '../ReusableComponents';
-import RenderExampleList from './RenderExampleList';
+import { List } from "../ReusableComponents";
+import RenderExampleList from "./RenderExampleList";
 
 const ExampleList = () => {
   return (
@@ -13,6 +13,6 @@ const ExampleList = () => {
       RenderItems={RenderExampleList}
     />
   );
-}
+};
 
 export default ExampleList;

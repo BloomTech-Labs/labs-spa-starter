@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 
-import RenderExampleList from '../components/ExampleListComponent/RenderExampleList';
+import RenderExampleList from "../components/ExampleListComponent/RenderExampleList";
 
 afterEach(() => {
   cleanup();
@@ -35,10 +35,10 @@ const mockData = [
 
 describe("<RenderExampleList /> test suite", () => {
   test("items container is rendered when passed empty 'data' array", () => {
-    const { container } = render(<RenderExampleList data={[]} />);  
+    const { container } = render(<RenderExampleList data={[]} />);
 
     // We expect a single div container to be rendered that contains all of the items
-    expect(container.querySelectorAll('div')).toHaveLength(1);
+    expect(container.querySelectorAll("div")).toHaveLength(1);
     // If an empty array is passed as props we don't expect any items to show
     expect(container.firstChild.children).toHaveLength(0);
   });
@@ -51,10 +51,12 @@ describe("<RenderExampleList /> test suite", () => {
       return newO;
     });
 
-    // We can mock the console error method to check which errors the console returns 
+    // We can mock the console error method to check which errors the console returns
     // and to prevent errors from printing in our tests
     // https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname
-    const mockConsoleErrorMethod = jest.spyOn(console, 'error').mockImplementation();
+    const mockConsoleErrorMethod = jest
+      .spyOn(console, "error")
+      .mockImplementation();
 
     render(<RenderExampleList data={incorrectData} />);
 
@@ -67,7 +69,7 @@ describe("<RenderExampleList /> test suite", () => {
   test("items container returns elements containing item data", () => {
     const { container } = render(<RenderExampleList data={mockData} />);
 
-    // We expect 3 child elements to render corresponding to the 3 objects 
+    // We expect 3 child elements to render corresponding to the 3 objects
     // in our mock dataset
     expect(container.firstChild.children).toHaveLength(3);
   });

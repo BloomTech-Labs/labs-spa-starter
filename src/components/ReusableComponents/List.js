@@ -7,13 +7,13 @@ const List = ({ LoadingComponent, RenderItems, getItemsData }) => {
 
   useEffect(() => {
     getItemsData()
-      .then(items => {   
+      .then((items) => {
         setItems(items);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       })
-      .finally(() =>{
+      .finally(() => {
         setFetching(false);
       });
   }, [getItemsData]);
@@ -26,5 +26,5 @@ export default List;
 List.propTypes = {
   LoadingComponent: PropTypes.func.isRequired,
   RenderItems: PropTypes.func.isRequired,
-  getItemsData: PropTypes.func.isRequired
-}
+  getItemsData: PropTypes.func.isRequired,
+};

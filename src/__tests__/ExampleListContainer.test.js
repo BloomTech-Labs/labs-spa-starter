@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 jest.mock("../api", () => ({
-  getExampleData: jest.fn(() => Promise.resolve([]))
+  getExampleData: jest.fn(() => Promise.resolve([])),
 }));
 
 describe("<ExampleListContainer /> test suite", () => {
