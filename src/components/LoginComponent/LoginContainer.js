@@ -11,7 +11,7 @@ const LoginContainer = () => {
       baseUrl: issuer ? issuer.split("/oauth2")[0] : "",
       clientId,
       redirectUri,
-      logo: "/react.svg",
+      logo: "path-to-your-logo",
       i18n: {
         en: {
           "primaryauth.title": "Welcome to Labs Basic SPA Please sign in",
