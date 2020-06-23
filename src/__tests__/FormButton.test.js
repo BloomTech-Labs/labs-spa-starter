@@ -14,9 +14,6 @@ describe("<FormButton /> test suite", () => {
     const button = getByText(/click here/i);
     expect(button.textContent).toBe("Click Here");
     expect(button.className).toBe("primary");
-    expect(button.textContent).toBe("Click Here");
-    expect(button.className).toBe("primary");
-    expect(button.textContent).toBe("Click Here");
     rerender(<FormButton buttonText="Click There" />);
     expect(button.textContent).toBe("Click There");
   });

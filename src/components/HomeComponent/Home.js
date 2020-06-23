@@ -1,14 +1,14 @@
 import React from "react";
 import { useOktaAuth } from "@okta/okta-react";
+import { Redirect } from "react-router-dom";
 
 function Home() {
   const { authState } = useOktaAuth();
+  const { isAuthenticated, isPending } = authState;
   // Authstate is the prop we want to use to check if users are authenticated.
   // We can perform these checks on the front end, but ought to make sure we perform them on the backend.
-  if (!authState.isAuthenticated) {
+  if (isAuthenticated) {
     // we actually want to redirect to login here to get the user to sign in.
-    return <div>Not Authenticated</div>;
-  } else {
     return (
       <div>
         <h1>Welcome to Labs Basic SPA</h1>
@@ -29,9 +29,10 @@ function Home() {
             the `index.js` file to pass that container around in your app.
           </p>
         </div>
-        {/* ListComponent */}
       </div>
     );
+  } else if (isPending) {
+    return <div></div>;
   }
 }
 
