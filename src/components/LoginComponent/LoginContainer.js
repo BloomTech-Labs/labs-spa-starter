@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import * as OktaSignIn from "@okta/okta-signin-widget";
+import OktaSignIn from "@okta/okta-signin-widget";
 import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
 
 import { config } from "../../utils/oktaConfig";
@@ -27,9 +27,11 @@ const LoginContainer = () => {
       },
       features: { registration: true },
       logo: "path-to-your-logo",
+      // add your custom logo to your signing/register widget here.
       i18n: {
         en: {
           "primaryauth.title": "Welcome to Labs Basic SPA Please sign in",
+          // change title for your app
         },
       },
       authParams: {

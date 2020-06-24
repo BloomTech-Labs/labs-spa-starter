@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup, act } from "@testing-library/react";
 
-import { List } from "../components/ReusableComponents";
+import { List } from "../components/common";
 
 afterEach(() => {
   cleanup();
