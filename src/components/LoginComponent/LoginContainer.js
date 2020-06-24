@@ -11,6 +11,20 @@ const LoginContainer = () => {
       baseUrl: issuer ? issuer.split("/oauth2")[0] : "",
       clientId,
       redirectUri,
+      registration: {
+        parseSchema: function (schema, onSuccess, onFailure) {
+          // handle parseSchema callback
+          onSuccess(schema);
+        },
+        preSubmit: function (postData, onSuccess, onFailure) {
+          // handle preSubmit callback
+          onSuccess(postData);
+        },
+        postSubmit: function (response, onSuccess, onFailure) {
+          // handle postsubmit callback
+          onSuccess(response);
+        },
+      },
       features: { registration: true },
       logo: "path-to-your-logo",
       i18n: {

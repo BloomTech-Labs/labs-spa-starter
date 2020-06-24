@@ -1,9 +1,10 @@
 import React from "react";
 
-function HomePage() {
+function HomePage(props) {
+  const { userInfo } = props;
   return (
     <div>
-      <h1>Welcome to Labs Basic SPA</h1>
+      <h1>Hi {userInfo.name} Welcome to Labs Basic SPA</h1>
       <p>
         The following are a few components put together in a way that informs
         industry practices. Use this repository as a boilerplate for your work.
