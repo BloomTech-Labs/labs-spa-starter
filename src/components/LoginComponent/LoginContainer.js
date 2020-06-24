@@ -11,6 +11,7 @@ const LoginContainer = () => {
       baseUrl: issuer ? issuer.split("/oauth2")[0] : "",
       clientId,
       redirectUri,
+      features: { registration: true },
       logo: "path-to-your-logo",
       i18n: {
         en: {
