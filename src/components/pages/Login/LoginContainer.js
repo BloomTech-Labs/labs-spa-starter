@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import * as OktaSignIn from "@okta/okta-signin-widget";
 import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
 
-import { config } from "../../utils/oktaConfig";
+import { config } from "../../../utils/oktaConfig";
 
 const LoginContainer = () => {
   useEffect(() => {
