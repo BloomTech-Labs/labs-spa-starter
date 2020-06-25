@@ -13,6 +13,7 @@ import { ExampleListPage } from "./components/pages/ExampleList";
 import { LoginPage } from "./components/pages/Login";
 import { HomePage } from "./components/pages/Home";
 import { config } from "./utils/oktaConfig";
+import { LoadingComponent } from "./components/common";
 
 ReactDOM.render(
   <Router>

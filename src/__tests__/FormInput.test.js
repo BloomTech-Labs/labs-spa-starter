@@ -1,4 +1,4 @@
-import { FormInput } from "../components/ReusableComponents";
+import { FormInput } from "../components/common";
 
 import React from "react";
 import { render } from "@testing-library/react";

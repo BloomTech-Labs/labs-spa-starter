@@ -3,10 +3,9 @@ import { useOktaAuth } from "@okta/okta-react";
 
 import RenderHomePage from "./RenderHomePage";
 
-function HomeContainer() {
+function HomeContainer({ LoadingComponent }) {
   const { authState, authService } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
-
   useEffect(() => {
     if (!authState.isAuthenticated) {
       // When user isn't authenticated, forget any user info
@@ -20,19 +19,16 @@ function HomeContainer() {
     }
   }, [authState, authService]);
 
-  if (authState.isPending) return <div>...loading login</div>;
   return (
     <>
       {authState.isAuthenticated && !userInfo && (
-        <div>Loading user information...</div>
+        <LoadingComponent message="... Fetching user profile" />
       )}
       {authState.isAuthenticated && userInfo && (
         <RenderHomePage userInfo={userInfo} />
       )}
     </>
   );
-  // Authstate is the prop we want to use to check if users are authenticated.
-  // We can perform these checks on the front end, but ought to make sure we perform them on the backend.
 }
 
 export default HomeContainer;
