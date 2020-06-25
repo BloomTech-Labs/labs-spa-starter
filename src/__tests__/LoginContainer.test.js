@@ -3,7 +3,7 @@ import { render, act } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import { submitLogin as mockSubmitLogin } from "../api";
 
-import LoginContainer from "../components/LoginComponent";
+import LoginContainer from "../components/pages/Login/LoginContainer";
 
 jest.mock("../api");
 afterEach(() => {
