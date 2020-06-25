@@ -21,7 +21,7 @@
 
 ## Components
 
-- [See an example of a `FormComponent` here](./src/components/FormComponent/README.md)
+<< MORE TO COME >>
 
 ## Styling Your App
 
@@ -32,3 +32,4 @@
 - In accordance with our [Labs Engineering Standards](https://labs.lambdaschool.com/) this app uses common practices for Unit/Integration Testing using:
   [React Testing Library](https://github.com/testing-library/react-testing-library)
   [Jest](https://jestjs.io/)
+- For examples on how to test your application and more information please see [the following documentation](./src/__tests__/README.md).
