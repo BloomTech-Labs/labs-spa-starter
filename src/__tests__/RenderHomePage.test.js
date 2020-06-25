@@ -7,12 +7,17 @@ jest.mock("@okta/okta-react", () => ({
   useOktaAuth: jest.fn(),
 }));
 
+afterEach(() => {
+  cleanup();
+  jest.resetAllMocks();
+});
+
 test("Home has an h1", () => {
   // let's just make sure the component mounts with an H1, you'll want to update this test to include any UI on your landing page you'd like
   const { getByText } = render(<RenderHomePage userInfo={{ name: "Sara" }} />);
   const h1 = getByText(/welcome to labs basic spa/i);
   expect(h1.textContent).toBe("Hi Sara Welcome to Labs Basic SPA");
-});
+
 
 describe("<Home /> test suite", () => {
   test("authenticated and userProfile not null", async () => {
@@ -28,9 +33,7 @@ describe("<Home /> test suite", () => {
     });
     await act(async () => {
       const { getByText, debug } = await render(
-        <RenderHomePage
-          LoadingComponent={() => <div>... Fetching User Profile</div>}
-        />
+        <Home LoadingComponent={() => <div>... Fetching User Profile</div>} />
       );
     });
   });
@@ -48,9 +51,7 @@ describe("<Home /> test suite", () => {
     });
 
     const { getByText, debug } = render(
-      <RenderHomePage
-        LoadingComponent={() => <div>... Fetching User Profile</div>}
-      />
+      <Home LoadingComponent={() => <div>... Fetching User Profile</div>} />
     );
     const loading = getByText(/... fetching user profile/i);
     expect(loading.textContent).toBe("... Fetching User Profile");
