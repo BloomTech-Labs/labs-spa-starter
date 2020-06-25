@@ -2,7 +2,7 @@ import React from "react";
 
 import { getExampleData } from "../../api";
 
-import { List } from "../ReusableComponents";
+import { List } from "../common";
 import RenderExampleList from "./RenderExampleList";
 
 // Here is an example of using our reusable List component to display some list data to the UI.
