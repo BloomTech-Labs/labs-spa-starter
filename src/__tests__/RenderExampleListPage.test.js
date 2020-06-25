@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 
-import RenderExampleList from "../components/ExampleListComponent/RenderExampleList";
+import RenderExampleListPage from "../components/pages/ExampleList/RenderExampleListPage";
 
 afterEach(() => {
   cleanup();
@@ -35,7 +35,7 @@ const mockData = [
 
 describe("<RenderExampleList /> test suite", () => {
   test("items container is rendered when passed empty 'data' array", () => {
-    const { container } = render(<RenderExampleList data={[]} />);
+    const { container } = render(<RenderExampleListPage data={[]} />);
 
     // We expect a single div container to be rendered that contains all of the items
     expect(container.querySelectorAll("div")).toHaveLength(1);
@@ -58,7 +58,7 @@ describe("<RenderExampleList /> test suite", () => {
       .spyOn(console, "error")
       .mockImplementation();
 
-    render(<RenderExampleList data={incorrectData} />);
+    render(<RenderExampleListPage data={incorrectData} />);
 
     expect(mockConsoleErrorMethod).toHaveBeenCalled();
     // Check what errors the console shows
@@ -67,7 +67,7 @@ describe("<RenderExampleList /> test suite", () => {
     );
   });
   test("items container returns elements containing item data", () => {
-    const { container } = render(<RenderExampleList data={mockData} />);
+    const { container } = render(<RenderExampleListPage data={mockData} />);
 
     // We expect 3 child elements to render corresponding to the 3 objects
     // in our mock dataset

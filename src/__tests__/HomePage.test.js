@@ -1,4 +1,4 @@
-import { HomePage } from "../components/pages";
+import { HomePage } from "../components/pages/Home";
 
 import React from "react";
 import { render } from "@testing-library/react";

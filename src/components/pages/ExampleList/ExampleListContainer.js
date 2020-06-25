@@ -1,9 +1,9 @@
 import React from "react";
 
-import { getExampleData } from "../../api";
+import { getExampleData } from "../../../api";
 
-import { List } from "../common";
-import RenderExampleList from "./RenderExampleList";
+import { List } from "../../common";
+import RenderExampleListPage from "./RenderExampleListPage";
 
 // Here is an example of using our reusable List component to display some list data to the UI.
 const ExampleList = () => {
@@ -15,7 +15,7 @@ const ExampleList = () => {
       // to complete.
       LoadingComponent={() => <div>Loading Items...</div>}
       // Here we are passing in a component that receives our new data and returns our JSX elements.
-      RenderItems={RenderExampleList}
+      RenderItems={RenderExampleListPage}
     />
   );
 };

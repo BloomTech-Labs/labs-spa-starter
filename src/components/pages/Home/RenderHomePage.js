@@ -1,6 +1,6 @@
 import React from "react";
 
-function HomePage(props) {
+function RenderHomePage(props) {
   const { userInfo } = props;
   return (
     <div>
@@ -24,4 +24,4 @@ function HomePage(props) {
     </div>
   );
 }
-export default HomePage;
+export default RenderHomePage;

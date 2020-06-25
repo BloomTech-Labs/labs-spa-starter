@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const RenderExampleList = (props) => (
+const RenderExampleListPage = (props) => (
   <div>
     {props.data.map((item) => (
       <figure key={item.id}>
@@ -14,10 +14,10 @@ const RenderExampleList = (props) => (
   </div>
 );
 
-export default RenderExampleList;
+export default RenderExampleListPage;
 
 // Don't forget your prop types! It will save you a lot of debugging headache as you add more features.
-RenderExampleList.propTypes = {
+RenderExampleListPage.propTypes = {
   data: PropTypes.arrayOf(
     // Here is an example of enforcing an object structure that we expect to receive in our props:
     PropTypes.shape({
