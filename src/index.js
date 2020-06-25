@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
 
-import ExampleList from "./components/ExampleListComponent";
+import { ExampleListPage } from "./components/pages/ExampleList";
 import { LoginPage } from "./components/pages/Login";
 import { HomePage } from "./components/pages/Home";
 import { config } from "./utils/oktaConfig";
@@ -34,7 +34,7 @@ function App() {
       <Route path="/implicit/callback" component={LoginCallback} />
       {/* any of the routes you need secured should be registered as SecureRoutes */}
       <SecureRoute path="/" exact component={HomePage} />
-      <SecureRoute path="/items" component={ExampleList} />
+      <SecureRoute path="/example-list" component={ExampleListPage} />
     </Security>
   );
 }
