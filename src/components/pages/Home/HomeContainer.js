@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
-import HomePage from "./HomePage";
+import RenderHomePage from "./RenderHomePage";
 
 function HomeContainer() {
   const { authState, authService } = useOktaAuth();
@@ -27,7 +27,7 @@ function HomeContainer() {
         <div>Loading user information...</div>
       )}
       {authState.isAuthenticated && userInfo && (
-        <HomePage userInfo={userInfo} />
+        <RenderHomePage userInfo={userInfo} />
       )}
     </>
   );
