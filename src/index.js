@@ -1,8 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  useHistory,
+  Switch,
+} from "react-router-dom";
 import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
 
+import { NotFoundPage } from "./components/pages/NotFound";
 import { ExampleListPage } from "./components/pages/ExampleList";
 import { LoginPage } from "./components/pages/Login";
 import { HomePage } from "./components/pages/Home";
@@ -30,11 +36,14 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      <Route path="/login" component={LoginPage} />
-      <Route path="/implicit/callback" component={LoginCallback} />
-      {/* any of the routes you need secured should be registered as SecureRoutes */}
-      <SecureRoute path="/" exact component={HomePage} />
-      <SecureRoute path="/example-list" component={ExampleListPage} />
+      <Switch>
+        <Route path="/login" component={LoginPage} />
+        <Route path="/implicit/callback" component={LoginCallback} />
+        {/* any of the routes you need secured should be registered as SecureRoutes */}
+        <SecureRoute path="/" exact component={HomePage} />
+        <SecureRoute path="/example-list" component={ExampleListPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
     </Security>
   );
 }
