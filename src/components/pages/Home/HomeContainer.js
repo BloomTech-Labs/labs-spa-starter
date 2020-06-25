@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
-import { HomePage } from "../pages";
+import HomePage from "./HomePage";
 
-function Home() {
+function HomeContainer() {
   const { authState, authService } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
 
@@ -35,4 +35,4 @@ function Home() {
   // We can perform these checks on the front end, but ought to make sure we perform them on the backend.
 }
 
-export default Home;
+export default HomeContainer;
