@@ -21,7 +21,9 @@
 
 ## Components
 
-<< MORE TO COME >>
+- We feel that you shouldn't have to spend time as a developer worrying about where your files should go and your architectural decisions that you'd have to make if you started from scratch.
+- Following the patterns we've laid out for your and the definitions of 'components' will help you focus on getting work done, rather than spending time deliberating on 'how' your work will get done.
+- Please see [the following documentation](./src/components/README.md) on how to work with and structure your components in this app.
 
 ## Styling Your App
 
