@@ -1,38 +1,60 @@
-import React, { useState } from "react";
-import { useOktaAuth } from "@okta/okta-react";
+import React, { useEffect } from "react";
+import * as OktaSignIn from "@okta/okta-signin-widget";
+import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
 
-import { FormButton, FormInput } from "../common";
+import { config } from "../../utils/oktaConfig";
 
 const LoginContainer = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const { authService, authState } = useOktaAuth();
+  useEffect(() => {
+    const { pkce, issuer, clientId, redirectUri, scopes } = config;
+    const widget = new OktaSignIn({
+      baseUrl: issuer ? issuer.split("/oauth2")[0] : "",
+      clientId,
+      redirectUri,
+      registration: {
+        parseSchema: function (schema, onSuccess, onFailure) {
+          // handle parseSchema callback
+          onSuccess(schema);
+        },
+        preSubmit: function (postData, onSuccess, onFailure) {
+          // handle preSubmit callback
+          onSuccess(postData);
+        },
+        postSubmit: function (response, onSuccess, onFailure) {
+          // handle postsubmit callback
+          onSuccess(response);
+        },
+      },
+      features: { registration: true },
+      logo: "path-to-your-logo",
+      i18n: {
+        en: {
+          "primaryauth.title": "Welcome to Labs Basic SPA Please sign in",
+        },
+      },
+      authParams: {
+        pkce,
+        issuer,
+        display: "page",
+        scopes,
+      },
+    });
 
-  const submitHandler = async (event) => {
-    event.preventDefault();
-    setIsLoading(true);
-    const { username, password } = event.target.elements;
-    const newUser = { username: username.value, password: password.value };
-    // we will take this user and eventually send it up to Okta to store there :) No need to handle users.
-    // You'll be able to use the `authState`
-    // this is a fake api call. API methods should be defined in the `../api/index.js` file
-    authService.login("/");
-    const { accessToken } = authState;
-    // now you can grab the token and do whatever you need with it.
-    // console.log(accessToken)
-  };
+    widget.renderEl(
+      { el: "#sign-in-widget" },
+      () => {
+        /**
+         * In this flow, the success handler will not be called because we redirect
+         * to the Okta org for the authentication workflow.
+         */
+      },
+      (err) => {
+        throw err;
+      }
+    );
+  }, []);
 
-  return (
-    <form onSubmit={submitHandler}>
-      <FormInput placeholder="User Name" name="username" labelId="Email" />
-      <FormInput placeholder="Password" name="password" labelId="Password" />
-      <FormButton
-        isDisabled={isLoading}
-        classType="primary"
-        type="submit"
-        buttonText="Click"
-      />
-    </form>
-  );
+  return <div id="sign-in-widget" />;
 };
 
 export default LoginContainer;

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 // we will define a bunch of API calls here.
 
 const sleep = (time) =>
@@ -7,8 +7,9 @@ const sleep = (time) =>
   });
 
 const getExampleData = () => {
-  return axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
-    .then(response => response.data)
-}
+  return axios
+    .get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
+    .then((response) => response.data);
+};
 
 export { sleep, getExampleData };
