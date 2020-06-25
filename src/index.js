@@ -7,6 +7,7 @@ import ExampleList from "./components/ExampleListComponent";
 import Login from "./components/LoginComponent";
 import Home from "./components/HomeComponent";
 import { config } from "./utils/oktaConfig";
+import { LoadingComponent } from "./components/common";
 
 ReactDOM.render(
   <Router>
@@ -33,7 +34,11 @@ function App() {
       <Route path="/login" component={Login} />
       <Route path="/implicit/callback" component={LoginCallback} />
       {/* any of the routes you need secured should be registered as SecureRoutes */}
-      <SecureRoute path="/" exact component={Home} />
+      <SecureRoute
+        path="/"
+        exact
+        component={() => <Home LoadingComponent={LoadingComponent} />}
+      />
       <SecureRoute path="/items" component={ExampleList} />
     </Security>
   );
