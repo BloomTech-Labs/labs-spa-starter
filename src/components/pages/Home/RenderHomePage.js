@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function RenderHomePage(props) {
-  const { userInfo } = props;
+  const { userInfo, authService } = props;
   return (
     <div>
       <h1>Hi {userInfo.name} Welcome to Labs Basic SPA</h1>
@@ -19,6 +20,18 @@ function RenderHomePage(props) {
           down your features in terms of components. Once you're read, organize
           your components inside a 'container' and simply use the `index.js`
           file to pass that container around in your app.
+        </p>
+        <p>
+          <Link to="/profile-list">Profiles</Link>
+        </p>
+        <p>
+          <button
+            onClick={() => {
+              authService.logout();
+            }}
+          >
+            Logout
+          </button>
         </p>
       </div>
     </div>
