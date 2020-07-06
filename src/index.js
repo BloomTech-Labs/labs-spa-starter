@@ -4,12 +4,13 @@ import {
   BrowserRouter as Router,
   Route,
   useHistory,
-  Switch,
+  Switch
 } from "react-router-dom";
 import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
 
 import { NotFoundPage } from "./components/pages/NotFound";
 import { ExampleListPage } from "./components/pages/ExampleList";
+import { ProfileListPage } from "./components/pages/ProfileList";
 import { LoginPage } from "./components/pages/Login";
 import { HomePage } from "./components/pages/Home";
 import { config } from "./utils/oktaConfig";
@@ -47,6 +48,7 @@ function App() {
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
         <SecureRoute path="/example-list" component={ExampleListPage} />
+        <SecureRoute path="/profile-list" component={ProfileListPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
