@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const FormButton = (props) => {
-  // notice we don't pass a click handler to this component. It's supposed to be used as a FormButton only.
-  // You'd want to use an onSubmit on the Form Element itself to keep your forms organized.
+const Button = (props) => {
+  // Here is a button for use when simply in need of a button that doesn't require to be wrapped in a form.
+  // contains a click property for your use onClick
   return (
     <button
+      onClick={props.handleClick}
       disabled={props.isDisabled}
       className={props.classType || "primary"}
     >
@@ -14,10 +15,11 @@ const FormButton = (props) => {
   );
 };
 
-export default FormButton;
+export default Button;
 
-FormButton.propTypes = {
+Button.propTypes = {
   buttonText: PropTypes.string.isRequired,
   classType: PropTypes.string,
   disabled: PropTypes.string,
+  handleClick: PropTypes.func,
 };

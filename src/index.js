@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   useHistory,
-  Switch
+  Switch,
 } from "react-router-dom";
 import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
 
