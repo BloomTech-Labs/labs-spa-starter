@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../../common";
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
@@ -15,13 +16,10 @@ function RenderHomePage(props) {
           <Link to="/profile-list">Profiles</Link>
         </p>
         <p>
-          <button
-            onClick={() => {
-              authService.logout();
-            }}
-          >
-            Logout
-          </button>
+          <Button
+            buttonText="Logout"
+            handleClick={() => authService.logout()}
+          />
         </p>
       </div>
     </div>
