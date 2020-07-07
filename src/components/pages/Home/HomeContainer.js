@@ -13,7 +13,7 @@ function HomeContainer({ LoadingComponent }) {
       // Our router will redirect back to login anyway.
       setUserInfo(null);
     } else {
-      authService.getUser().then(info => {
+      authService.getUser().then((info) => {
         // if user is authenticated we can use the authService to snag some user info.
         setUserInfo(info);
       });

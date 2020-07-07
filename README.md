@@ -40,3 +40,8 @@
   [React Testing Library](https://github.com/testing-library/react-testing-library)
   [Jest](https://jestjs.io/)
 - For examples on how to test your application and more information please see [the following documentation](./src/__tests__/README.md).
+
+## Contributing
+
+- As this repository is a Work In Progress (WIP) we'd love to hear more about what is working for you and what could be improved. [Please use the `Issues` tab in Github](https://github.com/Lambda-School-Labs/labs-spa-starter/issues) to submit and file any issues that come up during your development cycle. Issues should be related to things like, documentation, bugs that come up with the existing flow, architectural discussion, suggestions for improvements, and anything that you find cumbersome about getting started and working through a product cycle using these tools.
+- **Please use `Labels` when filing issues** try and include screenshots of bugs and steps to reproduce.
