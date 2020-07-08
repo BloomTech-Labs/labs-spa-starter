@@ -1,7 +1,7 @@
-import React from "react";
-import { render, cleanup, act } from "@testing-library/react";
+import React from 'react';
+import { render, cleanup, act } from '@testing-library/react';
 
-import { List } from "../components/common";
+import { List } from '../components/common';
 
 afterEach(() => {
   cleanup();
@@ -10,11 +10,11 @@ afterEach(() => {
 const getItemsData = jest.fn(() =>
   Promise.resolve([{ id: 1 }, { id: 2 }, { id: 3 }])
 );
-const RenderItems = jest.fn((props) =>
-  props.data.map((item) => <li key={item.id}>Item</li>)
+const RenderItems = jest.fn(props =>
+  props.data.map(item => <li key={item.id}>Item</li>)
 );
 
-describe("<List /> test suite", () => {
+describe('<List /> test suite', () => {
   test("renders 'loading' component initially", async () => {
     let rendered;
 
@@ -29,9 +29,9 @@ describe("<List /> test suite", () => {
       );
     });
 
-    expect(rendered.getByText("Loading...").textContent).toBe("Loading...");
+    expect(rendered.getByText('Loading...').textContent).toBe('Loading...');
   });
-  test("renders item data", async () => {
+  test('renders item data', async () => {
     let rendered;
 
     await act(async () => {

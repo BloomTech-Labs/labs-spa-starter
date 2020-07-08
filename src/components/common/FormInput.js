@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const FormInput = (props) => {
+const FormInput = props => {
   return (
     <>
       <label htmlFor={props.labelId}>{props.labelId}</label>

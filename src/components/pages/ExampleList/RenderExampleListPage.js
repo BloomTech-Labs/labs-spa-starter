@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const RenderExampleListPage = (props) => (
+const RenderExampleListPage = props => (
   <div>
-    {props.data.map((item) => (
+    {props.data.map(item => (
       <figure key={item.id}>
         <img src={item.thumbnailUrl} alt={item.title} />
         <figcaption>

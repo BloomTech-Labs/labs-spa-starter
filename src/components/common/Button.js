@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Button = (props) => {
+const Button = props => {
   // Here is a button for use when simply in need of a button that doesn't require to be wrapped in a form.
   // contains a click property for your use onClick
   return (
     <button
       onClick={props.handleClick}
       disabled={props.isDisabled}
-      className={props.classType || "primary"}
+      className={props.classType || 'primary'}
     >
       {props.buttonText}
     </button>

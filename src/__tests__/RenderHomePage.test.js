@@ -1,9 +1,9 @@
-import RenderHomePage from "../components/pages/Home/RenderHomePage";
-import React from "react";
-import { render, act, cleanup } from "@testing-library/react";
-import { useOktaAuth } from "@okta/okta-react";
+import RenderHomePage from '../components/pages/Home/RenderHomePage';
+import React from 'react';
+import { render, act, cleanup } from '@testing-library/react';
+import { useOktaAuth } from '@okta/okta-react';
 
-jest.mock("@okta/okta-react", () => ({
+jest.mock('@okta/okta-react', () => ({
   useOktaAuth: jest.fn(),
 }));
 
@@ -12,17 +12,17 @@ afterEach(() => {
   jest.resetAllMocks();
 });
 
-describe("<Home /> test suite", () => {
-  test("Home has an h1", () => {
+describe('<Home /> test suite', () => {
+  test('Home has an h1', () => {
     // let's just make sure the component mounts with an H1, you'll want to update this test to include any UI on your landing page you'd like
     const { getByText } = render(
-      <RenderHomePage userInfo={{ name: "Sara" }} />
+      <RenderHomePage userInfo={{ name: 'Sara' }} />
     );
     const h1 = getByText(/welcome to labs basic spa/i);
-    expect(h1.textContent).toBe("Hi Sara Welcome to Labs Basic SPA");
+    expect(h1.textContent).toBe('Hi Sara Welcome to Labs Basic SPA');
   });
 
-  test("authenticated and userProfile not null", async () => {
+  test('authenticated and userProfile not null', async () => {
     useOktaAuth.mockImplementation(() => {
       return {
         authState: {
@@ -40,7 +40,7 @@ describe("<Home /> test suite", () => {
     });
   });
 
-  test("renders loading component based on initial null userInfo state", () => {
+  test('renders loading component based on initial null userInfo state', () => {
     useOktaAuth.mockImplementation(() => {
       return {
         authState: {
@@ -56,7 +56,7 @@ describe("<Home /> test suite", () => {
       <Home LoadingComponent={() => <div>... Fetching User Profile</div>} />
     );
     const loading = getByText(/... fetching user profile/i);
-    expect(loading.textContent).toBe("... Fetching User Profile");
+    expect(loading.textContent).toBe('... Fetching User Profile');
   });
 });
 

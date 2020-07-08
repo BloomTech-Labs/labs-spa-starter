@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useOktaAuth } from "@okta/okta-react";
+import React, { useState, useEffect } from 'react';
+import { useOktaAuth } from '@okta/okta-react';
 
-import RenderHomePage from "./RenderHomePage";
+import RenderHomePage from './RenderHomePage';
 
 function HomeContainer({ LoadingComponent }) {
   const { authState, authService } = useOktaAuth();
@@ -13,7 +13,7 @@ function HomeContainer({ LoadingComponent }) {
       // Our router will redirect back to login anyway.
       setUserInfo(null);
     } else {
-      authService.getUser().then((info) => {
+      authService.getUser().then(info => {
         // if user is authenticated we can use the authService to snag some user info.
         setUserInfo(info);
       });
