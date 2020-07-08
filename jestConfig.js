@@ -1,7 +1,7 @@
-Object.defineProperty(window, "backingStorePixelRatio", {
+Object.defineProperty(window, 'backingStorePixelRatio', {
   value: () => ({
-    getPropertyValue: (prop) => {
-      return "";
+    getPropertyValue: prop => {
+      return '';
     },
   }),
 });
