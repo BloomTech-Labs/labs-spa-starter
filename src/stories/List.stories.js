@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, LoadingComponent, RenderItems } from '../components/common';
+import { List, LoadingComponent } from '../components/common';
 
 export default { title: 'List Example' };
 
@@ -24,7 +24,14 @@ export const listExample = () => (
     LoadingComponent={() => <LoadingComponent message="...loading data" />}
     RenderItems={() => (
       <RenderExample
-        data={[{ id: 12321312312, thumbnailUrl: '', title: 'hello' }]}
+        data={[
+          {
+            id: 12321312312,
+            thumbnailUrl:
+              'https://tk-assets.lambdaschool.com/8a7d77c1-50ee-4350-9840-d2437bbfcaea_KaU4DC_DG.jpg',
+            title: 'I Doggo',
+          },
+        ]}
       />
     )}
   />
