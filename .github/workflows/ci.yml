@@ -1,9 +1,9 @@
 name: build
 on:
   push:
-    branches: [ master ]
+    branches: [main]
   pull_request:
-    branches: [ master ]
+    branches: [main]
 jobs:
   coverage:
     name: Test and publish test coverage
@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "12"
+          node-version: '12'
       - run: npm install
       - uses: paambaati/codeclimate-action@v2.4.0
         env:

@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "../../common";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '../../common';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;

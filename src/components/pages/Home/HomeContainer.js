@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useOktaAuth } from "@okta/okta-react";
+import React, { useState, useEffect } from 'react';
+import { useOktaAuth } from '@okta/okta-react';
 
-import RenderHomePage from "./RenderHomePage";
+import RenderHomePage from './RenderHomePage';
 
 function HomeContainer({ LoadingComponent }) {
   const { authState, authService } = useOktaAuth();

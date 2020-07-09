@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 // we will define a bunch of API calls here.
 const apiUrl = `${process.env.REACT_APP_API_URI}/profiles`;
@@ -16,7 +16,7 @@ const getExampleData = () => {
 
 const getAuthHeader = authState => {
   if (!authState.isAuthenticated) {
-    throw new Error("Not authenticated");
+    throw new Error('Not authenticated');
   }
   return { Authorization: `Bearer ${authState.accessToken}` };
 };

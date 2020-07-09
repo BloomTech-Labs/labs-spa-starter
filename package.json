@@ -19,7 +19,9 @@
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "coverage": "npm test -- --coverage --watchAll=false",
     "lint": "eslint 'src/**/*.{js,jsx}' --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'"
+    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
+    "storybook": "start-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +50,8 @@
     ]
   },
   "devDependencies": {
+    "@storybook/react": "^5.3.19",
+    "@storybook/storybook-deployer": "^2.8.6",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^10.2.1",
     "@testing-library/user-event": "^7.2.1",

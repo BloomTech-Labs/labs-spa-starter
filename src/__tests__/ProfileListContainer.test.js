@@ -1,30 +1,30 @@
-import React from "react";
+import React from 'react';
 import {
   render,
   screen,
   waitForElementToBeRemoved,
   act,
-  getByTestId
-} from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
+  getByTestId,
+} from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import { ProfileListPage } from "../components/pages/ProfileList";
-jest.mock("../api", () => {
+import { ProfileListPage } from '../components/pages/ProfileList';
+jest.mock('../api', () => {
   return { getProfileData: () => Promise.resolve([]) };
 });
-jest.mock("@okta/okta-react", () => ({
+jest.mock('@okta/okta-react', () => ({
   useOktaAuth: () => {
     return {
       authState: {
-        isAuthenticated: true
+        isAuthenticated: true,
       },
-      authService: {}
+      authService: {},
     };
-  }
+  },
 }));
 
-describe("<ProfileListContainer />", () => {
-  test("renders a loading state upon loading and calling for profiles", async () => {
+describe('<ProfileListContainer />', () => {
+  test('renders a loading state upon loading and calling for profiles', async () => {
     const promise = Promise.resolve();
     const { getByText } = render(
       <Router>
@@ -32,7 +32,7 @@ describe("<ProfileListContainer />", () => {
       </Router>
     );
     const loadingMessage = getByText(/loading profiles.../i);
-    expect(loadingMessage.innerHTML).toBe("Loading Profiles...");
+    expect(loadingMessage.innerHTML).toBe('Loading Profiles...');
     await act(() => promise);
   });
 });
