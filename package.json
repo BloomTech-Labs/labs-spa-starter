@@ -37,6 +37,13 @@
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/stories"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
