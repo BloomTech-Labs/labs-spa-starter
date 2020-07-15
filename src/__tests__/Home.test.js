@@ -2,7 +2,6 @@ import React from 'react';
 import {
   render,
   cleanup,
-  act,
   waitForElementToBeRemoved,
 } from '@testing-library/react';
 import { HomePage } from '../components/pages/Home';
