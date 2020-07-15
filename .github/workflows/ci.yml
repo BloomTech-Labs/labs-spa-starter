@@ -14,9 +14,10 @@ jobs:
         with:
           node-version: "12"
       - run: npm install
-      - run: cp .env.sample .env
       - uses: paambaati/codeclimate-action@v2.4.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
+          REACT_APP_CLIENT_ID: ${{ secrets.OktaID }}
+          REACT_APP_OKTA_ISSUER_URI: ${{ secrets.OktaURI }}
         with:
           coverageCommand: npm run coverage
