@@ -1,8 +1,15 @@
 import React from 'react';
-import { render, cleanup, act } from '@testing-library/react';
+import {
+  render,
+  cleanup,
+  act,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import { HomePage } from '../components/pages/Home';
 import { LoadingComponent } from '../components/common';
 import { BrowserRouter as Router } from 'react-router-dom';
+
+afterEach(cleanup);
 
 jest.mock('@okta/okta-react', () => ({
   useOktaAuth: () => {
@@ -13,22 +20,24 @@ jest.mock('@okta/okta-react', () => ({
       authService: {
         getUser: () =>
           Promise.resolve({
-            name: 'Ryan',
+            name: 'sara',
           }),
       },
     };
   },
 }));
 
-afterEach(cleanup);
-
 describe('<HomeContainer /> testing suite', () => {
-  test('mounts a page', async () => {
-    render(
+  test('mounts a page', () => {
+    const { getByText } = render(
       <Router>
-        <HomePage />
+        <HomePage
+          LoadingComponent={() => (
+            <LoadingComponent message="...fetching profile" />
+          )}
+        />
       </Router>
     );
-    await act(() => Promise.resolve());
+    waitForElementToBeRemoved(getByText(/...fetching profile/i));
   });
 });
