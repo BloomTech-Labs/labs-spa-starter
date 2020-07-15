@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const RenderProfileListPage = props => (
   <div>
@@ -29,7 +29,7 @@ RenderProfileListPage.propTypes = {
       id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
       name: PropTypes.string,
       email: PropTypes.string,
-      avatar: PropTypes.string
+      avatar: PropTypes.string,
     })
-  ).isRequired
+  ).isRequired,
 };

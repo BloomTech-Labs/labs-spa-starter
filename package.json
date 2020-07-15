@@ -1,7 +1,7 @@
 {
   "name": "labs-spa-starter",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@okta/okta-react": "^3.0.2",
     "@okta/okta-signin-widget": "^4.1.2",
@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "coverage": "npm test -- --coverage --watchAll=false",
@@ -36,6 +36,15 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/stories/",
+      "<rootDir>/node_modules/"
+    ]
   },
   "browserslist": {
     "production": [
@@ -59,6 +68,7 @@
     "eslint-plugin-react-hooks": "^4.0.4",
     "husky": "^4.2.5",
     "jest-canvas-mock": "^2.2.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^10.2.11",
     "prettier-eslint-cli": "^5.0.0"

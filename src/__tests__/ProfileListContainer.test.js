@@ -1,5 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+  act,
+  getByTestId,
+} from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { ProfileListPage } from '../components/pages/ProfileList';
@@ -18,12 +24,15 @@ jest.mock('@okta/okta-react', () => ({
 }));
 
 describe('<ProfileListContainer />', () => {
-  test('renders a list component', () => {
-    const { container, debug } = render(
+  test('renders a loading state upon loading and calling for profiles', async () => {
+    const promise = Promise.resolve();
+    const { getByText } = render(
       <Router>
         <ProfileListPage />
       </Router>
     );
-    debug();
+    const loadingMessage = getByText(/loading profiles.../i);
+    expect(loadingMessage.innerHTML).toBe('Loading Profiles...');
+    await act(() => promise);
   });
 });
