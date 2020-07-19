@@ -31,6 +31,10 @@
 - run: `npm install` to download all dependencies.
 - run: `npm start` to start your local development server.
 
+## Deploying Your App
+
+- We recommend you deploy this project using [AWS amplify](https://aws.amazon.com/amplify/). You can find a step-by-step deployment guide [here](./DEPLOYMENT_GUIDE.md).
+
 ## Components
 
 - We feel that you shouldn't have to spend time as a developer worrying about where your files should go and your architectural decisions that you'd have to make if you started from scratch.
