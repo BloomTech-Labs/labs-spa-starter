@@ -1,3 +1,3 @@
-import DataVizContainer from './DataVizContainer';
+import DataVizContainer from './ExampleDataVizContainer';
 
 export { DataVizContainer as ExampleDataViz };
