@@ -5,6 +5,7 @@
   "dependencies": {
     "@okta/okta-react": "^3.0.2",
     "@okta/okta-signin-widget": "^4.1.2",
+    "antd": "^4.4.3",
     "axios": "^0.19.2",
     "plotly.js": "^1.54.6",
     "react": "^16.13.1",
