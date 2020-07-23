@@ -1,3 +1,4 @@
+/*eslint no-unused-vars: 0 */
 import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 import { getDSData } from '../../../api';
@@ -31,6 +32,7 @@ function DataViz(props) {
     }
     fetchDSData();
     return () => (loadingData = false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

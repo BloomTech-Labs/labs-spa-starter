@@ -43,7 +43,13 @@
 
 ## Styling Your App
 
-- << More info to come on styling :) >>
+- In order to provide an experience for you to dive right into a code base and have everything you need to successfully style and craft your UI Components we'd like for you to gain some practice using the [`ANT Design Library`](https://ant.design/).
+
+## Data Visualization - Working with Hybrid Teams
+
+- We have provided and example of a simple Plot Charting component that can be built, configured, and delivered for your use by the Data Science Team.
+- We strongly urge you to work in constant collaboration with the data scientists in order to pull in their work into your application, ensure that their work matches the theme and style of your team's application, and that the data you pull in represents what problem that team was trying to solve. **This will be a process that requires work and dedication and give-and-take.**
+- **Example Components**: [Please see here for an example](./src/components/pages/ExampleDataViz/README.md) of how to work w/ `Plotly.js` and `React-Plotly.js`.
 
 ## Testing your App.
 
