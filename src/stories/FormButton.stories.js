@@ -8,4 +8,4 @@ export default { title: 'Form Button' };
 
 export const basicUsage = () => <FormButton buttonText="hello" />;
 
-export const usageWithAnt = () => <Button>Submit</Button>;
+export const usageWithAnt = () => <Button htmlType="submit">Submit</Button>;
