@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 
+import 'antd/dist/antd.css';
+
 import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';

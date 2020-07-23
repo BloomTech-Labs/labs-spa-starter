@@ -1,5 +1,9 @@
 import React from 'react';
 import { List, LoadingComponent } from '../components/common';
+import { List as AntList, Card } from 'antd';
+
+import 'antd/dist/antd.css';
+import Meta from 'antd/lib/card/Meta';
 
 export default { title: 'List Example' };
 
@@ -36,3 +40,39 @@ export const listExample = () => (
     )}
   />
 );
+
+export const antListExample = () => {
+  const data = [
+    {
+      id: 12321312312,
+      thumbnailUrl:
+        'https://tk-assets.lambdaschool.com/8a7d77c1-50ee-4350-9840-d2437bbfcaea_KaU4DC_DG.jpg',
+      title: 'Doggo 1',
+    },
+    {
+      id: 12345312312,
+      thumbnailUrl:
+        'https://tk-assets.lambdaschool.com/8a7d77c1-50ee-4350-9840-d2437bbfcaea_KaU4DC_DG.jpg',
+      title: 'Doggo 2',
+    },
+    {
+      id: 12321312313,
+      thumbnailUrl:
+        'https://tk-assets.lambdaschool.com/8a7d77c1-50ee-4350-9840-d2437bbfcaea_KaU4DC_DG.jpg',
+      title: 'Doggo 3',
+    },
+  ];
+  return (
+    <AntList
+      bordered
+      dataSource={data}
+      renderItem={item => (
+        <AntList.Item>
+          <Card style={{ width: 240 }} cover={<img src={item.thumbnailUrl} />}>
+            <Meta title={item.title} />
+          </Card>
+        </AntList.Item>
+      )}
+    />
+  );
+};
