@@ -12,13 +12,16 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: "12"
+          node-version: '12'
       - run: npm install
       - run: cp .env.sample .env
       - uses: paambaati/codeclimate-action@v2.6.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
         with:
+          # Run our `coverage` script in our `package.json`
           coverageCommand: npm run coverage
+          # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
+          coverageLocations: './coverage/clover.xml:clover'
           # Great for troubleshooting
           debug: true
