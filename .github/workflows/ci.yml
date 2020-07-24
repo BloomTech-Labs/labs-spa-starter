@@ -9,14 +9,16 @@ jobs:
     name: Test and publish test coverage
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: "12"
       - run: npm install
       - run: cp .env.sample .env
-      - uses: paambaati/codeclimate-action@v2.4.0
+      - uses: paambaati/codeclimate-action@v2.6.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
         with:
           coverageCommand: npm run coverage
+          # Great for troubleshooting
+          debug: true
