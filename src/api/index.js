@@ -28,7 +28,7 @@ const getAuthHeader = authState => {
   if (!authState.isAuthenticated) {
     throw new Error('Not authenticated');
   }
-  return { Authorization: `Bearer ${authState.accessToken}` };
+  return { Authorization: `Bearer ${authState.idToken}` };
 };
 
 const apiAuthGet = authHeader => {
