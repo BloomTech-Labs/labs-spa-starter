@@ -1,78 +1,83 @@
 import React, { useState } from 'react';
 import RenderDataViz from './RenderDataViz';
+import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+import { Select } from 'antd';
+const { Option } = Select;
 
 function DataVizContainer() {
   const initialState = 'AL';
   const [stateCode, setStateCode] = useState(initialState);
+  const { authState } = useOktaAuth();
   function handleSetStateCode(e) {
     e.preventDefault();
   }
-  function handleSelectState(e) {
-    setStateCode(e.target.value);
+  function handleSelectState(value) {
+    setStateCode(value);
   }
   return (
     <>
       <form onSubmit={handleSetStateCode}>
-        <select
+        <Select
           type="select"
           onChange={handleSelectState}
           placeholder="Select Your State"
         >
-          <option value="AL">AL</option>
-          <option value="AK">AK</option>
-          <option value="AR">AR</option>
-          <option value="AZ">AZ</option>
-          <option value="CA">CA</option>
-          <option value="CO">CO</option>
-          <option value="CT">CT</option>
-          <option value="DC">DC</option>
-          <option value="DE">DE</option>
-          <option value="FL">FL</option>
-          <option value="GA">GA</option>
-          <option value="HI">HI</option>
-          <option value="IA">IA</option>
-          <option value="ID">ID</option>
-          <option value="IL">IL</option>
-          <option value="IN">IN</option>
-          <option value="KS">KS</option>
-          <option value="KY">KY</option>
-          <option value="LA">LA</option>
-          <option value="MA">MA</option>
-          <option value="MD">MD</option>
-          <option value="ME">ME</option>
-          <option value="MI">MI</option>
-          <option value="MN">MN</option>
-          <option value="MO">MO</option>
-          <option value="MS">MS</option>
-          <option value="MT">MT</option>
-          <option value="NC">NC</option>
-          <option value="NE">NE</option>
-          <option value="NH">NH</option>
-          <option value="NJ">NJ</option>
-          <option value="NM">NM</option>
-          <option value="NV">NV</option>
-          <option value="NY">NY</option>
-          <option value="ND">ND</option>
-          <option value="OH">OH</option>
-          <option value="OK">OK</option>
-          <option value="OR">OR</option>
-          <option value="PA">PA</option>
-          <option value="RI">RI</option>
-          <option value="SC">SC</option>
-          <option value="SD">SD</option>
-          <option value="TN">TN</option>
-          <option value="TX">TX</option>
-          <option value="UT">UT</option>
-          <option value="VT">VT</option>
-          <option value="VA">VA</option>
-          <option value="WA">WA</option>
-          <option value="WI">WI</option>
-          <option value="WV">WV</option>
-          <option value="WY">WY</option>
-        </select>
+          <Option value="AL">AL</Option>
+          <Option value="AK">AK</Option>
+          <Option value="AR">AR</Option>
+          <Option value="AZ">AZ</Option>
+          <Option value="CA">CA</Option>
+          <Option value="CO">CO</Option>
+          <Option value="CT">CT</Option>
+          <Option value="DC">DC</Option>
+          <Option value="DE">DE</Option>
+          <Option value="FL">FL</Option>
+          <Option value="GA">GA</Option>
+          <Option value="HI">HI</Option>
+          <Option value="IA">IA</Option>
+          <Option value="ID">ID</Option>
+          <Option value="IL">IL</Option>
+          <Option value="IN">IN</Option>
+          <Option value="KS">KS</Option>
+          <Option value="KY">KY</Option>
+          <Option value="LA">LA</Option>
+          <Option value="MA">MA</Option>
+          <Option value="MD">MD</Option>
+          <Option value="ME">ME</Option>
+          <Option value="MI">MI</Option>
+          <Option value="MN">MN</Option>
+          <Option value="MO">MO</Option>
+          <Option value="MS">MS</Option>
+          <Option value="MT">MT</Option>
+          <Option value="NC">NC</Option>
+          <Option value="NE">NE</Option>
+          <Option value="NH">NH</Option>
+          <Option value="NJ">NJ</Option>
+          <Option value="NM">NM</Option>
+          <Option value="NV">NV</Option>
+          <Option value="NY">NY</Option>
+          <Option value="ND">ND</Option>
+          <Option value="OH">OH</Option>
+          <Option value="OK">OK</Option>
+          <Option value="OR">OR</Option>
+          <Option value="PA">PA</Option>
+          <Option value="RI">RI</Option>
+          <Option value="SC">SC</Option>
+          <Option value="SD">SD</Option>
+          <Option value="TN">TN</Option>
+          <Option value="TX">TX</Option>
+          <Option value="UT">UT</Option>
+          <Option value="VT">VT</Option>
+          <Option value="VA">VA</Option>
+          <Option value="WA">WA</Option>
+          <Option value="WI">WI</Option>
+          <Option value="WV">WV</Option>
+          <Option value="WY">WY</Option>
+        </Select>
       </form>
       <RenderDataViz
-        url={'https://ds-bw-test.herokuapp.com/viz/' + stateCode}
+        authState={authState}
+        url={process.env.REACT_APP_API_URI + '/data/viz/' + stateCode}
       />
     </>
   );

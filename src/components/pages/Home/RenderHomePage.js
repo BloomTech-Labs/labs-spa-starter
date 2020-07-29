@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../../common';
+import { Button } from 'antd';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
@@ -22,10 +22,9 @@ function RenderHomePage(props) {
           <Link to="/datavis">Data Visualizations Example</Link>
         </p>
         <p>
-          <Button
-            buttonText="Logout"
-            handleClick={() => authService.logout()}
-          />
+          <Button type="primary" onClick={() => authService.logout()}>
+            Logout
+          </Button>
         </p>
       </div>
     </div>

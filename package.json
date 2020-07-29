@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": false,
   "dependencies": {
+    "@craco/craco": "^5.6.4",
     "@okta/okta-react": "^3.0.2",
     "@okta/okta-signin-widget": "^4.1.2",
     "antd": "^4.4.3",
     "axios": "^0.19.2",
+    "craco-less": "^1.17.0",
     "plotly.js": "^1.54.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -15,9 +17,9 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "coverage": "npm test -- --coverage --watchAll=false",
