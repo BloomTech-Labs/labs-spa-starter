@@ -45,6 +45,8 @@
 
 - In order to provide an experience for you to dive right into a code base and have everything you need to successfully style and craft your UI Components we'd like for you to gain some practice using the [`ANT Design Library`](https://ant.design/).
 
+- Instructions on how to use components.
+
 ## Data Visualization - Working with Hybrid Teams
 
 - We have provided and example of a simple Plot Charting component that can be built, configured, and delivered for your use by the Data Science Team.

@@ -19,16 +19,16 @@ function DataViz(props) {
 
   useEffect(() => {
     function fetchDSData() {
-      getDSData(props.url)
+      getDSData(props.url, props.authState)
         .then(res => {
           setData(res);
         })
         .catch(err => {
-          return setData(initialState);
+          setData({ data: null, err });
         });
     }
     fetchDSData();
-  }, [props.url]);
+  }, [props.url, props.authState]);
 
   return (
     <Plot

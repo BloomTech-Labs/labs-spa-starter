@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
 import RenderHomePage from './RenderHomePage';
@@ -6,10 +6,12 @@ import RenderHomePage from './RenderHomePage';
 function HomeContainer({ LoadingComponent }) {
   const { authState, authService } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
+  const [memoAuthService] = useMemo(() => [authService], []);
 
   useEffect(() => {
     let isSubscribed = true;
-    authService
+
+    memoAuthService
       .getUser()
       .then(info => {
         // if user is authenticated we can use the authService to snag some user info.
@@ -23,7 +25,7 @@ function HomeContainer({ LoadingComponent }) {
         return setUserInfo(null);
       });
     return () => (isSubscribed = false);
-  }, [authState, authService]);
+  }, [memoAuthService]);
 
   return (
     <>

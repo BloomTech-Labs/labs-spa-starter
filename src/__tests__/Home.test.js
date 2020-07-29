@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  render,
-  cleanup,
-  waitForElementToBeRemoved,
-} from '@testing-library/react';
+import { render, cleanup, wait, waitFor } from '@testing-library/react';
 import { HomePage } from '../components/pages/Home';
 import { LoadingComponent } from '../components/common';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -17,18 +13,15 @@ jest.mock('@okta/okta-react', () => ({
         isAuthenticated: true,
       },
       authService: {
-        getUser: () =>
-          Promise.resolve({
-            name: 'sara',
-          }),
+        getUser: () => Promise.resolve({ name: 'sara' }),
       },
     };
   },
 }));
 
 describe('<HomeContainer /> testing suite', () => {
-  test('mounts a page', () => {
-    const { getByText } = render(
+  test('mounts a page', async () => {
+    const { findByText, getByText, queryByText } = render(
       <Router>
         <HomePage
           LoadingComponent={() => (
@@ -37,6 +30,13 @@ describe('<HomeContainer /> testing suite', () => {
         />
       </Router>
     );
-    waitForElementToBeRemoved(getByText(/...fetching profile/i));
+    let loader = getByText(/...fetching profile/i);
+    expect(loader).toBeInTheDocument();
+
+    await waitFor(async () => {
+      await findByText(/hi sara/i);
+    });
+    loader = queryByText(/...fetching profile/i);
+    expect(loader).toBeNull();
   });
 });
