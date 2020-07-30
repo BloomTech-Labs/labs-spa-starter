@@ -1,11 +1,11 @@
 import React from 'react';
 import { FormInput, FormButton } from '../components/common';
 import { Form, Input, Button } from 'antd';
-import markdown from './story_descriptions/formNotes.md';
+import markdown from './story_descriptions/Form.md';
 
 import 'antd/dist/antd.css';
 
-export default { title: 'Form Example', parameters: { notes: markdown } };
+export default { title: 'Form', parameters: { notes: markdown } };
 
 export const formExample = () => {
   return (

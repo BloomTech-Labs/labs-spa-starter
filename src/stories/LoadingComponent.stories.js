@@ -1,7 +1,7 @@
 import React from 'react';
 import { LoadingComponent } from '../components/common';
 import { Spin } from 'antd';
-import markdown from './story_descriptions/LoadingComponentNotes.md';
+import markdown from './story_descriptions/LoadingComponent.md';
 
 import 'antd/dist/antd.css';
 

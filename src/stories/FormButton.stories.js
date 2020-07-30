@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'antd';
 import { FormButton } from '../components/common';
-import markdown from './story_descriptions/buttonNotes.md';
+import markdown from './story_descriptions/FormButton.md';
 
 import 'antd/dist/antd.css';
 

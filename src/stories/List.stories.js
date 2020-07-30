@@ -4,9 +4,9 @@ import { List as AntList, Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 
 import 'antd/dist/antd.css';
-import markdown from './story_descriptions/ListNotes.md';
+import markdown from './story_descriptions/List.md';
 
-export default { title: 'List Example', parameters: { notes: markdown } };
+export default { title: 'List', parameters: { notes: markdown } };
 
 const handleFetchItems = () => Promise.resolve([]);
 
