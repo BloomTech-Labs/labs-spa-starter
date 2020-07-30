@@ -1,11 +1,12 @@
 import React from 'react';
 import { List, LoadingComponent } from '../components/common';
 import { List as AntList, Card } from 'antd';
-
-import 'antd/dist/antd.css';
 import Meta from 'antd/lib/card/Meta';
 
-export default { title: 'List Example' };
+import 'antd/dist/antd.css';
+import markdown from './story_descriptions/ListNotes.md';
+
+export default { title: 'List Example', parameters: { notes: markdown } };
 
 const handleFetchItems = () => Promise.resolve([]);
 

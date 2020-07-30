@@ -28,3 +28,5 @@ import { Form, Input, Button } from 'antd';
       </Form.Item>
     </Form>
 ```
+
+For more info on using the Ant Design `Form` component check out the <a href="https://ant.design/components/form/" target="_blank">Ant Design Docs</a>.
