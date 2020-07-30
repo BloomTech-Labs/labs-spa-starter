@@ -4,6 +4,7 @@ import { useOktaAuth } from '@okta/okta-react';
 import { getProfileData } from '../../../api';
 
 import { List } from '../../common';
+
 import RenderProfileListPage from './RenderProfileListPage';
 
 // Here is an example of using our reusable List component to display some list data to the UI.

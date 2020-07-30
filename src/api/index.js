@@ -33,6 +33,7 @@ const getDSData = (url, authState) => {
     .then(res => JSON.parse(res.data))
     .catch(err => err);
 };
+
 const apiAuthGet = authHeader => {
   return axios.get(apiUrl, { headers: authHeader });
 };
