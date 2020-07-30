@@ -1,13 +1,14 @@
+import markdown from './story_descriptions/Form.md';
+
 import React from 'react';
 import { FormInput, FormButton } from '../components/common';
 import { Form, Input, Button } from 'antd';
-import markdown from './story_descriptions/Form.md';
 
 import 'antd/dist/antd.css';
 
 export default { title: 'Form', parameters: { notes: markdown } };
 
-export const formExample = () => {
+export const exampleForm = () => {
   return (
     <form onSubmit={e => e.preventDefault()}>
       <FormInput placeholder="Email" name="email" labelId="User Email" />
@@ -16,7 +17,7 @@ export const formExample = () => {
   );
 };
 
-export const antFormExample = () => {
+export const antForm = () => {
   const layout = {
     wrapperCol: {
       span: 8,

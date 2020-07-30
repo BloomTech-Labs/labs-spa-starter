@@ -1,10 +1,10 @@
+import markdown from './story_descriptions/List.md';
+
 import React from 'react';
 import { List, LoadingComponent } from '../components/common';
 import { List as AntList, Card } from 'antd';
-import Meta from 'antd/lib/card/Meta';
 
 import 'antd/dist/antd.css';
-import markdown from './story_descriptions/List.md';
 
 export default { title: 'List', parameters: { notes: markdown } };
 
@@ -31,7 +31,7 @@ const RenderExample = props => (
   </div>
 );
 
-export const listExample = () => (
+export const exampleList = () => (
   <List
     getItemsData={handleFetchItems}
     LoadingComponent={() => <LoadingComponent message="...loading data" />}
@@ -39,7 +39,7 @@ export const listExample = () => (
   />
 );
 
-export const antListExample = () => {
+export const antList = () => {
   const data = [
     {
       id: 12321312312,
@@ -67,7 +67,7 @@ export const antListExample = () => {
       renderItem={item => (
         <AntList.Item>
           <Card style={{ width: 240 }} cover={<img src={item.thumbnailUrl} />}>
-            <Meta title={item.title} />
+            <Card.Meta title={item.title} />
           </Card>
         </AntList.Item>
       )}
