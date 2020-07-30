@@ -59,7 +59,7 @@ const RenderMyList = ({ dataArray }) => {
   );
 }
 ```
-- Note that we are following best practice here and receiving our data from props and passing it to our `List` component as props. This ensures that our `RenderMyList` component only does one thing: rendering our `List`.
+- Note that we are following best practices here and receiving our data from props and passing it to our `List` component as props. This ensures that our `RenderMyList` component only does one thing: rendering our `List`.
 
 - For more info on using the Ant Design `List` component check out the <a href="https://ant.design/components/list/" target="_blank">Ant Design Docs</a>.
 
