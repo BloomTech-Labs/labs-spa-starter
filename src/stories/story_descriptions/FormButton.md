@@ -1,30 +1,29 @@
 # Buttons
 
-### Example Form Button
+### Example Reusable Form Button
 
-- To use the common `<Button></Button>` component from `antd` you'll need to import blah
+- Here's an example of a basic reusable `FormButton` component we created that can be used in forms throughout your application:
 
 ```jsx
 import { FormButton } from './components/common';
 
 <FormButton buttonText="hello" />
 ```
-### Ant Button
 
-- Here's how to import and use a basic Ant Design form submit button.
+- Note that we are importing our component from `./components/common`. This is the directory where any of your custom reusable components should live.
+
+### Ant Form Button
+
+- Here's an example of how to import and use a basic Ant Design submit button:
 
 ```jsx
 import { Button } from 'antd';
 
+// Default submit button
 <Button htmlType="submit">Submit</Button>
-```
 
-- Here's an example of a primary button in Ant Design:
-
-```jsx
-import { Button } from 'antd';
-
+// Primary submit button
 <Button htmlType="submit" type="primary">Submit</Button>
 ```
 
-For more info on using the Ant Design `Button` component check out the <a href="https://ant.design/components/button/" target="_blank">Ant Design Docs</a>.
+- For more info on using the Ant Design `Button` component check out the <a href="https://ant.design/components/button/" target="_blank">Ant Design Docs</a>.
