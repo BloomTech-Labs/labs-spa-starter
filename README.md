@@ -21,10 +21,11 @@
 
 ## Getting Started
 
-### Enviornment variables
+### Environment variables
 
 - `REACT_APP_CLIENT_ID` Okta client id
 - `REACT_APP_OKTA_ISSUER_URI` Okta api authorization server issuer uri (eg. `https://name-438r8hr.okta.com/oauth2/default`)
+- `REACT_APP_API_URI` The URL (localhost or live) for the Backend that you're building
 
 - Fork and clone the repo to install it as your own remote.
   - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to your to point to your Labs Team Front End Repository.
