@@ -30,6 +30,18 @@
 - run: `npm install` to download all dependencies.
 - run: `npm start` to start your local development server.
 
+## Errors on Deploy
+
+- Are you seeing an error on `npm start` that looks something like this?
+  ![npm start fail](https://tk-assets.lambdaschool.com/e1b1f8c9-612d-4744-b413-36ebf29f0337_image4.png)
+
+- Head over to the `package.json` file and please modify your scripts in order to allocate more memory for the 'craco' package. More information on 'craco' and why we use it [can be found here](https://github.com/gsoft-inc/craco).
+
+```js
+"start": "craco --max_old_space_size=4096 start",
+"build": "craco --max_old_space_size=4096 build",
+```
+
 ## Deploying Your App
 
 - Your front end is to be deployed using [AWS amplify](https://aws.amazon.com/amplify/). You can find a step-by-step deployment guide [here](./DEPLOYMENT_GUIDE.md).
