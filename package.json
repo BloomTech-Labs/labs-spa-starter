@@ -2,9 +2,8 @@
   "name": "labs-spa-starter",
   "version": "0.1.0",
   "private": false,
-  "license" : "MIT",
+  "license": "MIT",
   "repository": "github:Lambda-School-Labs/labs-spa-starter",
-  
   "dependencies": {
     "@craco/craco": "^5.6.4",
     "@okta/okta-react": "^3.0.2",
@@ -82,7 +81,10 @@
     "jest-canvas-mock": "^2.2.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-prop-type-error": "^1.1.0",
+    "kleur": "^4.1.1",
     "lint-staged": "^10.2.11",
-    "prettier-eslint-cli": "^5.0.0"
+    "prettier-eslint-cli": "^5.0.0",
+    "prompts": "^2.3.2",
+    "yaml": "^1.10.0"
   }
 }
