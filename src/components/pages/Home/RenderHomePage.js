@@ -22,7 +22,10 @@ function RenderHomePage(props) {
           <Link to="/datavis">Data Visualizations Example</Link>
         </p>
         <p>
-          <Button onClick={() => authService.logout()} buttonText="Logout" />
+          <Button
+            handleClick={() => authService.logout()}
+            buttonText="Logout"
+          />
         </p>
       </div>
     </div>
