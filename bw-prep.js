@@ -26,7 +26,6 @@ const YAML = require('yaml');
     initial: false,
   });
 
-  // console.log(response);
   var packages = [
     '@storybook/react',
     '@storybook/addon-actions',
