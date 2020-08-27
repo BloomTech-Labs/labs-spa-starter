@@ -26,9 +26,11 @@
 - `REACT_APP_API_URI` The URL (localhost or live) for the Backend that you're building
 
 - Fork and clone the repo to install it as your own remote.
-  - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to your to point to your Labs Team Front End Repository.
+  - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to point to your Labs Team Front End Repository.
 - run: `npm install` to download all dependencies.
 - run: `npm start` to start your local development server.
+
+> When using Okta for authentication, the app will need to run locally on port 3000.
 
 ## Errors on Deploy
 
