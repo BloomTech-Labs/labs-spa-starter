@@ -15,5 +15,6 @@
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
     "semi": "error"
   },
+  "ignorePatterns": ["src/__tests__/**, **/*.spec.js"],
   "extends": "react-app"
 }

@@ -35,7 +35,7 @@
   },
   "lint-staged": {
     "**/*.js": [
-      "eslint --fix --ignore-pattern '**/*.spec.js'",
+      "eslint --fix",
       "prettier-eslint --write"
     ]
   },
