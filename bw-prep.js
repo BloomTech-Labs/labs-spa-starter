@@ -49,6 +49,7 @@ const YAML = require('yaml');
   alterIndex(response.hasDS);
   // change ci.yml
   removeCC();
+  removeThemeFromCraco();
   // remove storybook stories
   fs.rmdirSync('./src/stories', { recursive: true });
   fs.rmdirSync('./.storybook', { recursive: true });
@@ -56,6 +57,11 @@ const YAML = require('yaml');
   fs.rmdirSync('./src/styles', { recursive: true });
   // remove scaffold .git 😈
   fs.rmdirSync('./.git', { recursive: true });
+  // copy the .env.sample file to .env
+  fs.copyFile('./.env.sample', './.env', (err) => {
+    if (err) throw err;
+    console.log('.env.sample was copied to .env');
+  });
   // remove this file 😱
   fs.unlinkSync('./bw-prep.js');
 })();
@@ -111,6 +117,16 @@ function alterIndex(hasDS) {
   } catch (e) {
     console.error(e);
   }
+}
+
+function removeThemeFromCraco() {
+  const fileName = './craco.config.js';
+  const file = fs.readFileSync(fileName, 'utf8');
+  var lines = file.split('\n');
+  lines.splice(10, 1);
+  lines.splice(0, 1);
+  const result = lines.map(line => line).join('\n');
+  fs.writeFileSync(fileName, result, 'utf8');
 }
 
 function replaceHomePage(lines) {

@@ -34,7 +34,7 @@
     "extends": "react-app"
   },
   "lint-staged": {
-    "**/*.js": [
+    "src/**/*.{js,jsx}": [
       "eslint --fix",
       "prettier-eslint --write"
     ]
