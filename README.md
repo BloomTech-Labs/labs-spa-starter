@@ -31,9 +31,14 @@ For steps on how to work with this repository [please see here](https://docs.lab
 
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
-## Project Overview
+- Fork and clone the repo to install it as your own remote.
+  - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to point to your Labs Team Front End Repository.
+- run: `npm install` to download all dependencies.
+- run: `npm start` to start your local development server.
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+> When using Okta for authentication, the app will need to run locally on port 3000.
+
+## Deploying Your App
 
 🚫 Replace lorem ipsum with a description of your project
 

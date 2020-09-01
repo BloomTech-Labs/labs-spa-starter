@@ -11,6 +11,9 @@
 # env
 .env
 
+# logs
+*.log
+
 # production
 /build
 
