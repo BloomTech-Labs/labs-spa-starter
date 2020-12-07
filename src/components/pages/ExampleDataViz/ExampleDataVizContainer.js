@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import RenderDataViz from './RenderDataViz';
-import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+import { useOktaAuth } from '@okta/okta-react;
 import { Select } from 'antd';
 import states from './statedata.js';
 const { Option } = Select;
