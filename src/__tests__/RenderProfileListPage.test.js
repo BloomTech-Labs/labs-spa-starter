@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 test('loads a profile list', () => {
   const data = [{ id: '1234', name: 'item' }];
-  const { getByText, debug } = render(
+  const { getByText } = render(
     <Router>
       <RenderProfileListPage data={data} />
     </Router>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, wait, waitFor } from '@testing-library/react';
+import { render, cleanup, waitFor } from '@testing-library/react';
 import { HomePage } from '../components/pages/Home';
 import { LoadingComponent } from '../components/common';
 import { BrowserRouter as Router } from 'react-router-dom';
