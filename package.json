@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "coverage": "npm test -- --coverage --watchAll=false",
-    "lint": "eslint 'src/**/*.{js,jsx}' --fix",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
     "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
     "storybook": "start-storybook",
     "deploy-storybook": "storybook-to-ghpages"
