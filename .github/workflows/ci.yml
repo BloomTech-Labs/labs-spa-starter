@@ -5,16 +5,19 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  run-linter: 
-    name: Run Linters
+  # A job to generate and publish code coverage
+  lint:
+    name: Run Lint on source
+
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
           node-version: "14"
 
-      # Run the NPM install command before proceeding
       - run: npm install
 
       - run: npm run lint
