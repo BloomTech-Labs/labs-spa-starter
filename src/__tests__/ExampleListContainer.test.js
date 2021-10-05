@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act, cleanup, waitForElement } from '@testing-library/react';
+import { render, act, cleanup } from '@testing-library/react';
 
 import ExampleListContainer from '../components/pages/ExampleList/ExampleListContainer';
 

@@ -22,7 +22,7 @@ const RenderExample = props => (
   <div>
     {props.data.map(item => (
       <figure key={item.id}>
-        <img src={item.thumbnailUrl} alt={item.title} />
+        <img alt={`title ${item.title}`} src={item.thumbnailUrl} />
         <figcaption>
           <h3>{item.title}</h3>
         </figcaption>
