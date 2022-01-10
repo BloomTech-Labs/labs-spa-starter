@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": false,
   "license": "MIT",
-  "repository": "github:Lambda-School-Labs/labs-spa-starter",
+  "repository": "github:BloomTech-Labs/labs-spa-starter",
   "dependencies": {
-    "@craco/craco": "^5.6.4",
+    "@craco/craco": "^5.9.0",
     "@okta/okta-react": "^3.0.2",
     "@okta/okta-signin-widget": "^4.1.2",
-    "antd": "^4.4.3",
+    "antd": "^4.18.3",
     "axios": "^0.21.1",
-    "craco-less": "^1.17.0",
+    "craco-less": "^2.0.0",
     "plotly.js": "^1.54.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -26,9 +26,7 @@
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "coverage": "npm test -- --coverage --watchAll=false",
     "lint": "eslint 'src/**/*.{js,jsx}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
-    "storybook": "start-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -66,13 +64,7 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-knobs": "^5.3.19",
-    "@storybook/addon-notes": "^5.3.19",
-    "@storybook/addons": "^5.3.19",
-    "@storybook/react": "^5.3.19",
-    "@storybook/storybook-deployer": "^2.8.6",
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^10.2.1",
     "@testing-library/user-event": "^7.2.1",
     "eslint-config-prettier": "^6.11.0",
@@ -83,7 +75,7 @@
     "jest-prop-type-error": "^1.1.0",
     "kleur": "^4.1.1",
     "lint-staged": "^10.2.11",
-    "prettier-eslint-cli": "^5.0.0",
+    "prettier-eslint-cli": "^4.2.1",
     "prompts": "^2.3.2",
     "yaml": "^1.10.0"
   }
