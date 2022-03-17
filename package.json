@@ -1,41 +1,54 @@
 {
   "name": "labs-spa-starter",
-  "version": "0.1.0",
-  "private": false,
-  "license": "MIT",
-  "repository": "github:BloomTech-Labs/labs-spa-starter",
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
   "dependencies": {
-    "@craco/craco": "^5.9.0",
+    "@ant-design/icons": "^4.7.0",
+    "@ant-design/pro-form": "^1.52.13",
+    "@ant-design/pro-table": "^2.62.7",
+    "@craco/craco": "^6.0.0",
     "@okta/okta-react": "^3.0.2",
     "@okta/okta-signin-widget": "^4.1.2",
-    "antd": "^4.18.3",
+    "antd": "^4.18.4",
     "axios": "^0.21.1",
-    "craco-less": "^2.0.0",
+    "craco-less": "^1.20.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
     "plotly.js": "^1.54.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-plotly.js": "^2.4.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "4.0.0"
   },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test --env=jest-environment-jsdom-sixteen",
-    "eject": "react-scripts eject",
-    "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-    "coverage": "npm test -- --coverage --watchAll=false",
-    "lint": "eslint 'src/**/*.{js,jsx}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'"
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^10.2.1",
+    "@testing-library/user-event": "^7.2.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "husky": "^4.2.5",
+    "jest-canvas-mock": "^2.2.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-prop-type-error": "^1.1.0",
+    "kleur": "^4.1.1",
+    "lint-staged": "^10.2.11",
+    "prettier-eslint-cli": "^5.0.0",
+    "prompts": "^2.3.2",
+    "yaml": "^1.10.0"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "eslint --fix",
-      "prettier-eslint --write"
-    ]
   },
   "husky": {
     "hooks": {
@@ -47,36 +60,27 @@
       "src/**/*.js"
     ],
     "coveragePathIgnorePatterns": [
-      "<rootDir>/src/stories/",
       "<rootDir>/node_modules/"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+  "license": "MIT",
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "prettier-eslint --write"
     ]
   },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^10.2.1",
-    "@testing-library/user-event": "^7.2.1",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
-    "husky": "^4.2.5",
-    "jest-canvas-mock": "^2.2.0",
-    "jest-environment-jsdom-sixteen": "^1.0.3",
-    "jest-prop-type-error": "^1.1.0",
-    "kleur": "^4.1.1",
-    "lint-staged": "^10.2.11",
-    "prettier-eslint-cli": "^4.2.1",
-    "prompts": "^2.3.2",
-    "yaml": "^1.10.0"
-  }
+  "private": false,
+  "repository": "github:Lambda-School-Labs/labs-spa-starter",
+  "scripts": {
+    "build": "craco --max_old_space_size=4096 build",
+    "coverage": "npm test -- --coverage --watchAll=false",
+    "eject": "react-scripts eject",
+    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
+    "start": "craco --max_old_space_size=4096 start",
+    "test": "craco test --env=jest-environment-jsdom-sixteen"
+  },
+  "version": "0.1.0"
 }
