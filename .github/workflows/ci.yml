@@ -1,9 +1,9 @@
 name: build
 on:
-  push:
-    branches: [main]
   pull_request:
-    branches: [main]
+  push:
+    branches:
+      - main
 jobs:
   # A job to generate and publish code coverage
   lint:
@@ -44,7 +44,7 @@ jobs:
       - uses: paambaati/codeclimate-action@v2.4.0
         env:
           # An environment variable, the value is a GitHub repo secret
-          CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATEREPORTERID }}
         with:
           # Run our `coverage` script in our `package.json`
           coverageCommand: npm run coverage
