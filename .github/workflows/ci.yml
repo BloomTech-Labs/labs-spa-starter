@@ -6,21 +6,6 @@ on:
       - main
 jobs:
   # A job to generate and publish code coverage
-  lint:
-    name: Run Lint on source
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-
-      - run: npm install
-
-      - run: npm run lint
   coverage:
     name: Test and publish test coverage
 
@@ -41,7 +26,7 @@ jobs:
       - run: npm install
 
       # A GitHub action for running tests and publishing coverage
-      - uses: paambaati/codeclimate-action@v2.4.0
+      - uses: paambaati/codeclimate-action@v3.0.0
         env:
           # An environment variable, the value is a GitHub repo secret
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATEREPORTERID }}
