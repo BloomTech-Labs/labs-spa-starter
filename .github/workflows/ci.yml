@@ -21,3 +21,37 @@ jobs:
       - run: npm install
 
       - run: npm run lint
+      
+    coverage:
+		# A more descriptive name of the job
+      name: Test and publish test coverage
+
+    # The OS on which the job will run
+      runs-on: ubuntu-latest
+
+    # The steps for the job, executed in sequence
+      steps:
+			
+      # A GitHub action for checking out the current branch
+      - uses: actions/checkout@master
+
+      # A GitHub action to setup Node.js
+      - uses: actions/setup-node@master
+        with:
+          node-version: "12"
+
+      # Run the NPM install command before proceeding
+      - run: npm install
+
+      # A GitHub action for running tests and publishing coverage
+      - uses: paambaati/codeclimate-action@v2.4.0
+        env:
+          # An environment variable, the value is a GitHub repo secret
+          CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
+        with:
+          # Run our `coverage` script in our `package.json`
+          coverageCommand: npm run coverage
+          # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
+          coverageLocations: "./coverage/clover.xml:clover"
+          # Great for troubleshooting
+          debug: true
