@@ -21,16 +21,14 @@ jobs:
       - run: npm install
 
       - run: npm run lint
-      
-    coverage:
-		# A more descriptive name of the job
-      name: Test and publish test coverage
+  coverage:
+    name: Test and publish test coverage
 
     # The OS on which the job will run
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     # The steps for the job, executed in sequence
-      steps:
+    steps:
       # A GitHub action for checking out the current branch
       - uses: actions/checkout@master
 
