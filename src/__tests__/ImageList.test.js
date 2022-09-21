@@ -1,39 +1,47 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
-import mockAxios from 'axios';
+import { render, waitFor, screen, act } from '@testing-library/react';
+import axios from 'axios';
 import { ImageList } from '../components/pages/ImageList';
 
-beforeEach(() => mockCall());
-afterEach(() => {
-  jest.clearAllMocks();
-});
+jest.mock('axios', () => jest.fn(() => Promise.resolve()));
 
-function mockCall() {
-  mockAxios.get.mockResolvedValueOnce(
-    Promise.resolve({
+describe('Image List Component', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('shows loading on first paint', async () => {
+    axios.get = jest.fn().mockResolvedValue({
+      data: {
+        results: [],
+      },
+    });
+    const { findByText } = render(<ImageList />);
+    const loadingDiv = await waitFor(() => findByText(/... loading/i));
+    expect(loadingDiv.innerHTML).toBe('... loading data');
+  });
+
+  it('renders images from API', async () => {
+    axios.get = jest.fn().mockResolvedValue({
       data: {
         results: [
           {
-            id: 'OfdDiqx8Cz8',
+            alt_description: 'person holding gray and beige fish',
+            id: 'qNhstTawQrI',
             description:
-              'Salted chocolate chip cookie recipe on www.foodess.com',
-            alt_description: 'close-up photo of baked cookies',
+              'A lovely lady angler took our photographer down to the river in Eleven Mile Canyon, Lake George, CO to do a little fly fishing. This woma…',
             urls: {
               thumb:
-                'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTE1MDl8MHwxfHNlYXJjaHwxfHxjb29raWVzfGVufDB8fHx8MTY1OTM4NjE5Nw&ixlib=rb-1.2.1&q=80&w=200',
+                'https://images.unsplash.com/photo-1485452499676-62ab02c20e83?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNTE1MDl8MHwxfHNlYXJjaHwxfHxyYWluYm93JT…',
             },
           },
         ],
       },
-    })
-  );
-}
-
-it('has list items in document', async () => {
-  const { getByText } = render(<ImageList />);
-  expect(getByText(/fetching data/i)).toBeInTheDocument();
-  await waitFor(() => {
-    expect(getByText(/salted chocolate chip/i)).toBeInTheDocument();
-    expect(mockAxios.get).toHaveBeenCalledTimes(1);
+    });
+    const { findByText } = render(<ImageList />);
+    const foundText = await waitFor(() =>
+      findByText(/person holding gray and beige fish/i)
+    );
+    console.log(foundText);
   });
 });

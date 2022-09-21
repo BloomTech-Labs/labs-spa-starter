@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const ImageList = () => {
   const [images, setImages] = useState([]);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
     axios
@@ -13,12 +12,14 @@ const ImageList = () => {
           Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`,
         },
       })
-      .then(res => setImages(res.data.results))
-      .catch(err => setError(true));
+      .then(res => {
+        setImages(res.data.results);
+      })
+      .catch(err => console.error(err));
   }, [images]);
 
-  if (error) {
-    return <div>"Error Fetching Data"</div>;
+  if (images.length === 0) {
+    return <div>... loading data</div>;
   } else {
     return images.map(image => {
       return (
