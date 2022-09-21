@@ -38,10 +38,10 @@ describe('Image List Component', () => {
         ],
       },
     });
-    const { findByText } = render(<ImageList />);
-    const foundText = await waitFor(() =>
-      findByText(/person holding gray and beige fish/i)
-    );
-    console.log(foundText);
+    const { getByText } = render(<ImageList />);
+    await waitFor(() => {
+      const imageElement = getByText(/a lovely/i);
+      expect(imageElement).toBeInTheDocument();
+    });
   });
 });
