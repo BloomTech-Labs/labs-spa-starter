@@ -16,12 +16,12 @@
     "@ant-design/icons": "^4.7.0",
     "@ant-design/pro-form": "^1.52.13",
     "@ant-design/pro-table": "^2.62.7",
-    "@craco/craco": "^6.4.3",
+    "@craco/craco": "^7.0.0",
     "@okta/okta-react": "^3.0.2",
     "@okta/okta-signin-widget": "^4.1.2",
     "antd": "^4.18.4",
     "axios": "^0.21.1",
-    "craco-less": "^1.20.0",
+    "craco-less": "^2.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "plotly.js": "^1.54.6",
@@ -29,7 +29,7 @@
     "react-dom": "^16.13.1",
     "react-plotly.js": "^2.4.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.11.3",
